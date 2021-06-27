@@ -1,11 +1,28 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_wechat/core/extension/double_extension.dart';
 
 class AppTheme {
 
   // 2.普通模式
   static final ThemeData norTheme = ThemeData(
     splashColor: Colors.transparent,
-    highlightColor: Colors.transparent, primarySwatch: createMaterialColor(Color(0xff39B231)),
+    highlightColor: Colors.transparent,
+    primarySwatch: createMaterialColor(Color(0xff39B231)),
+    canvasColor: Color(0xffededed),
+    appBarTheme: AppBarTheme(
+      backgroundColor: Color(0xffededed),
+      elevation: 0.0,
+      centerTitle: true,
+      backwardsCompatibility: false,
+      titleTextStyle: TextStyle(
+        color: Colors.black,
+        fontSize: 50.0.px,
+        fontWeight: FontWeight.w500,
+      )
+    ),
+    bottomNavigationBarTheme: BottomNavigationBarThemeData(
+      backgroundColor: Colors.white,
+    )
   );
 
 

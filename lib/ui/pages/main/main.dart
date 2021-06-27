@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_wechat/ui/pages/address_book/address_book.dart';
 import 'package:flutter_wechat/ui/pages/discovery/discovery.dart';
+import 'package:flutter_wechat/ui/pages/message/message.dart';
 import 'package:flutter_wechat/ui/pages/mine/mine.dart';
 
 class MainPage extends StatefulWidget {
@@ -37,7 +38,7 @@ class _MainPageState extends State<MainPage> {
 }
 
 final List<Widget> pageList = [
-  MinePage(),
+  MessagePage(),
   AddressBook(),
   DiscoveryPage(),
   MinePage()
