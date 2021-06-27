@@ -21,6 +21,10 @@ class _MainPageState extends State<MainPage> {
         children: pageList,
       ),
       bottomNavigationBar: BottomNavigationBar(
+        currentIndex: _currentIndex,
+        selectedFontSize: 14,
+        unselectedFontSize: 14,
+        type: BottomNavigationBarType.fixed,
         items: items,
         onTap: (int index) {
           setState(() {
@@ -33,6 +37,7 @@ class _MainPageState extends State<MainPage> {
 }
 
 final List<Widget> pageList = [
+  MinePage(),
   AddressBook(),
   DiscoveryPage(),
   MinePage()
@@ -40,16 +45,23 @@ final List<Widget> pageList = [
 
 final List<BottomNavigationBarItem> items = [
   BottomNavigationBarItem(
-    icon: Icon(Icons.people),
+    icon: Icon(Icons.chat_bubble_outline),
+    activeIcon: Icon(Icons.chat_bubble),
+    label: '微信',
+  ),
+  BottomNavigationBarItem(
+    icon: Icon(Icons.group),
+    activeIcon: Icon(Icons.group_outlined),
     label: '通讯录',
   ),
   BottomNavigationBarItem(
-    icon: Icon(Icons.compass),
-    activeIcon: Icon(Icons.compass_fill),
+    icon: Icon(Icons.explore_outlined),
+    activeIcon: Icon(Icons.explore),
     label: '发现',
   ),
   BottomNavigationBarItem(
-    icon: Icon(Icons.person),
+    icon: Icon(Icons.person_outline),
+    activeIcon: Icon(Icons.person),
     label: '我',
   ),
 ];

@@ -8,7 +8,7 @@ void main() => runApp(MyApp());
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    ScreenFit.initialize();
+    // ScreenFit.initialize();
     return MaterialApp(
       title: 'Flutter Demo',
       theme: AppTheme.norTheme,

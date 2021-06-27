@@ -7,6 +7,7 @@ class DiscoveryPage extends StatelessWidget {
       appBar: AppBar(
         title: Text('发现'),
       ),
+      body: Text('发现'),
     );
   }
 }

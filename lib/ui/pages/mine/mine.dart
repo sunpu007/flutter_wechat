@@ -7,6 +7,7 @@ class MinePage extends StatelessWidget {
       appBar: AppBar(
         title: Text('我的'),
       ),
+      body: Text('我的'),
     );
   }
 }
