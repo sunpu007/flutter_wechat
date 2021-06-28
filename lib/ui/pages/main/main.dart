@@ -51,8 +51,8 @@ final List<BottomNavigationBarItem> items = [
     label: '微信',
   ),
   BottomNavigationBarItem(
-    icon: Icon(Icons.group),
-    activeIcon: Icon(Icons.group_outlined),
+    icon: Icon(Icons.group_outlined),
+    activeIcon: Icon(Icons.group),
     label: '通讯录',
   ),
   BottomNavigationBarItem(

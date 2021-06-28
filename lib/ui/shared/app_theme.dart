@@ -9,6 +9,7 @@ class AppTheme {
     highlightColor: Colors.transparent,
     primarySwatch: createMaterialColor(Color(0xff39B231)),
     canvasColor: Color(0xffededed),
+    dividerColor: Color(0xffe5e5e5),
     appBarTheme: AppBarTheme(
       backgroundColor: Color(0xffededed),
       elevation: 0.0,
@@ -16,8 +17,12 @@ class AppTheme {
       backwardsCompatibility: false,
       titleTextStyle: TextStyle(
         color: Colors.black,
-        fontSize: 50.0.px,
+        fontSize: 60.0.px,
         fontWeight: FontWeight.w500,
+      ),
+      iconTheme: IconThemeData(
+        color: Colors.black,
+        size: 60.0.px
       )
     ),
     bottomNavigationBarTheme: BottomNavigationBarThemeData(
