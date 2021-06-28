@@ -20,7 +20,11 @@ class MessagePage extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Container(
-                padding: EdgeInsets.all(43.0.px),
+                // padding: EdgeInsets.all(43.0.px),
+                padding: EdgeInsets.symmetric(
+                  vertical: 32.0.px,
+                  horizontal: 43.0.px,
+                ),
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(20.0.px),
                   child: Image.network(
@@ -33,8 +37,8 @@ class MessagePage extends StatelessWidget {
               ),
               Expanded(
                 child: Container(
-                  height: 216.0.px,
-                  padding: EdgeInsets.fromLTRB(0, 43.0.px, 43.0.px, 43.0.px),
+                  height: 194.0.px,
+                  padding: EdgeInsets.fromLTRB(0, 32.0.px, 43.0.px, 32.0.px),
                   decoration: BoxDecoration(
                     border: Border(
                       bottom: BorderSide(

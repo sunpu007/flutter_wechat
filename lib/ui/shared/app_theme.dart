@@ -29,7 +29,7 @@ class AppTheme {
       )
     ),
     bottomNavigationBarTheme: BottomNavigationBarThemeData(
-      backgroundColor: Colors.white,
+      backgroundColor: Color(0xfff7f7f7),
     )
   );
 
