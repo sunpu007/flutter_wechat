@@ -13,6 +13,8 @@ class MyApp extends StatelessWidget {
 
     return MaterialApp(
       title: 'Flutter Demo',
+      // 取消debug图标
+      debugShowCheckedModeBanner: false,
       theme: AppTheme.norTheme,
       routes: AppRouter.routers,
       initialRoute: AppRouter.initialRoute,

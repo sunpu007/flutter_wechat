@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_wechat/core/extension/double_extension.dart';
+import 'package:flutter_wechat/core/extension/double_extension.dart';
 
 class AppTheme {
 
-  // 2.普通模式
+  static final double appBarHeight = 127.0.px;
+
+  // 1.普通模式
   static final ThemeData norTheme = ThemeData(
     splashColor: Colors.transparent,
     highlightColor: Colors.transparent,
@@ -17,12 +20,12 @@ class AppTheme {
       backwardsCompatibility: false,
       titleTextStyle: TextStyle(
         color: Colors.black,
-        fontSize: 60.0.px,
+        fontSize: 44.0.px,
         fontWeight: FontWeight.w500,
       ),
       iconTheme: IconThemeData(
         color: Colors.black,
-        size: 60.0.px
+        size: 44.0.px
       )
     ),
     bottomNavigationBarTheme: BottomNavigationBarThemeData(
@@ -31,7 +34,7 @@ class AppTheme {
   );
 
 
-  // 3.暗黑模式
+  // 2.暗黑模式
   static final ThemeData darkTheme = ThemeData(
     primarySwatch: Colors.grey,
   );
