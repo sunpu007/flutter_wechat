@@ -5,6 +5,7 @@ import 'package:flutter_wechat/core/extension/double_extension.dart';
 class AppTheme {
 
   static final double appBarHeight = 127.0.px;
+  static final double defaultBorderRadius = 20.0.px;
 
   // 1.普通模式
   static final ThemeData norTheme = ThemeData(

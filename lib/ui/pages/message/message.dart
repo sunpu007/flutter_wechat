@@ -26,7 +26,7 @@ class MessagePage extends StatelessWidget {
                   horizontal: 43.0.px,
                 ),
                 child: ClipRRect(
-                  borderRadius: BorderRadius.circular(20.0.px),
+                  borderRadius: BorderRadius.circular(AppTheme.defaultBorderRadius),
                   child: Image.network(
                     'https://oss-blog.myjerry.cn/avatar/blog-avatar.jpg',
                     width: 130.0.px,
