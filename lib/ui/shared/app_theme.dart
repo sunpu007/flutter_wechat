@@ -31,6 +31,11 @@ class AppTheme {
     ),
     bottomNavigationBarTheme: BottomNavigationBarThemeData(
       backgroundColor: Color(0xfff7f7f7),
+    ),
+    popupMenuTheme: PopupMenuThemeData(
+      textStyle: TextStyle(
+        fontSize: 42.0.px
+      )
     )
   );
 
