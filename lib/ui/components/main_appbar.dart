@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_wechat/core/extension/double_extension.dart';
+import 'package:flutter_wechat/ui/shared/app_theme.dart';
 
 class MainAppBarComponent extends StatelessWidget {
   final String _title;
@@ -19,7 +20,7 @@ class MainAppBarComponent extends StatelessWidget {
         ),
         PopupMenuButton<String>(
           icon: Icon(Icons.add_circle_outline),
-          offset: Offset(0, 56.0),
+          offset: Offset(0, AppTheme.appBarHeight),
           elevation: 0.0,
           color: Color(0xff4c4c4c),
           shape: RoundedRectangleBorder(
