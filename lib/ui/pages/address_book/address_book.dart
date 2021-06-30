@@ -1,22 +1,46 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_wechat/core/model/address_books_model.dart';
+import 'package:flutter_wechat/core/model/user_info_model.dart';
+import 'package:flutter_wechat/core/services/json_parse.dart';
 import 'package:flutter_wechat/ui/components/main_appbar.dart';
 import 'package:flutter_wechat/ui/pages/address_book/classification.dart';
 import 'package:flutter_wechat/ui/pages/address_book/contact_person.dart';
 import 'package:flutter_wechat/ui/shared/app_theme.dart';
 import 'package:flutter_wechat/core/extension/double_extension.dart';
 
-class AddressBook extends StatelessWidget {
+class AddressBook extends StatefulWidget {
+  @override
+  _AddressBookState createState() => _AddressBookState();
+}
+
+class _AddressBookState extends State<AddressBook> {
   final double _iconWidth = 108.0.px;
 
+  List<String> _letters = <String>[];
+
+  List<AddressBooksModel> _addressBooks = [];
+
   @override
-  Widget build(BuildContext context) {
-    final letters = <String>[];
+  void initState() {
+    super.initState();
+    List<String> letters = [];
     for (int i = 65; i < 91; i++) {
       letters.add(utf8.decode([i]));
     }
+    setState(() {
+      _letters = letters;
+    });
+    JsonParse.getAddressBooksData().then((res) {
+      setState(() {
+        _addressBooks = res;
+      });
+    });
+  }
 
+  @override
+  Widget build(BuildContext context) {
     return Scaffold(
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(AppTheme.appBarHeight),
@@ -49,132 +73,41 @@ class AddressBook extends StatelessWidget {
                 ),
                 isShowBottomBorder: false,
               ),
-              Classification(title: 'A'),
-              ContactPerson(
-                  title: '黑狼传说',
-                  icon: Image.network(
-                    'https://oss-blog.myjerry.cn/avatar/blog-avatar.jpg',
-                    width: _iconWidth,
-                    height: _iconWidth,
-                    fit: BoxFit.cover,
-                  )
-              ),
-              ContactPerson(
-                  title: '黑狼传说',
-                  icon: Image.network(
-                    'https://oss-blog.myjerry.cn/avatar/blog-avatar.jpg',
-                    width: _iconWidth,
-                    height: _iconWidth,
-                    fit: BoxFit.cover,
-                  )
-              ),
-              Classification(title: 'B'),
-              ContactPerson(
-                  title: '黑狼传说',
-                  icon: Image.network(
-                    'https://oss-blog.myjerry.cn/avatar/blog-avatar.jpg',
-                    width: _iconWidth,
-                    height: _iconWidth,
-                    fit: BoxFit.cover,
-                  )
-              ),
-              Classification(title: 'D'),
-              ContactPerson(
-                  title: '黑狼传说',
-                  icon: Image.network(
-                    'https://oss-blog.myjerry.cn/avatar/blog-avatar.jpg',
-                    width: _iconWidth,
-                    height: _iconWidth,
-                    fit: BoxFit.cover,
-                  )
-              ),
-              ContactPerson(
-                  title: '黑狼传说',
-                  icon: Image.network(
-                    'https://oss-blog.myjerry.cn/avatar/blog-avatar.jpg',
-                    width: _iconWidth,
-                    height: _iconWidth,
-                    fit: BoxFit.cover,
-                  )
-              ),
-              ContactPerson(
-                  title: '黑狼传说',
-                  icon: Image.network(
-                    'https://oss-blog.myjerry.cn/avatar/blog-avatar.jpg',
-                    width: _iconWidth,
-                    height: _iconWidth,
-                    fit: BoxFit.cover,
-                  )
-              ),
-              Classification(title: 'M'),
-              ContactPerson(
-                  title: '黑狼传说',
-                  icon: Image.network(
-                    'https://oss-blog.myjerry.cn/avatar/blog-avatar.jpg',
-                    width: _iconWidth,
-                    height: _iconWidth,
-                    fit: BoxFit.cover,
-                  )
-              ),
-              ContactPerson(
-                  title: '黑狼传说',
-                  icon: Image.network(
-                    'https://oss-blog.myjerry.cn/avatar/blog-avatar.jpg',
-                    width: _iconWidth,
-                    height: _iconWidth,
-                    fit: BoxFit.cover,
-                  )
-              ),
-              ContactPerson(
-                  title: '黑狼传说',
-                  icon: Image.network(
-                    'https://oss-blog.myjerry.cn/avatar/blog-avatar.jpg',
-                    width: _iconWidth,
-                    height: _iconWidth,
-                    fit: BoxFit.cover,
-                  )
-              ),
-              Classification(title: 'Z'),
-              ContactPerson(
-                  title: '黑狼传说',
-                  icon: Image.network(
-                    'https://oss-blog.myjerry.cn/avatar/blog-avatar.jpg',
-                    width: _iconWidth,
-                    height: _iconWidth,
-                    fit: BoxFit.cover,
-                  )
-              ),
-              ContactPerson(
-                  title: '黑狼传说',
-                  icon: Image.network(
-                    'https://oss-blog.myjerry.cn/avatar/blog-avatar.jpg',
-                    width: _iconWidth,
-                    height: _iconWidth,
-                    fit: BoxFit.cover,
-                  )
-              ),
-              ContactPerson(
-                  title: '黑狼传说',
-                  icon: Image.network(
-                    'https://oss-blog.myjerry.cn/avatar/blog-avatar.jpg',
-                    width: _iconWidth,
-                    height: _iconWidth,
-                    fit: BoxFit.cover,
-                  )
-              ),
+              ..._buildList(),
             ],
           ),
           Positioned(
             right: 23.0.px,
             child: Column(
               children: [
-                ...letters.map((e) => Text(e, style: TextStyle(fontSize: 34.0.px, height: 1.2),),),
+                ..._letters.map((e) => Text(e, style: TextStyle(fontSize: 34.0.px, height: 1.2),),),
               ],
             ),
           )
         ],
       ),
     );
+  }
+
+  List<Widget> _buildList() {
+    List<Widget> widgetList = [];
+
+    _addressBooks.forEach((AddressBooksModel item) {
+      widgetList.add(Classification(title: item.letter),);
+      item.children.forEach((UserInfoModel userInfo) {
+        widgetList.add(ContactPerson(
+            title: userInfo.name,
+            icon: Image.network(
+              userInfo.avatarUrl,
+              width: _iconWidth,
+              height: _iconWidth,
+              fit: BoxFit.cover,
+            )
+        ));
+      });
+    });
+
+    return widgetList;
   }
 
   List<Widget> _buildNavContactPerson() {
