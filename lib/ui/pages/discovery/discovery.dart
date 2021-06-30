@@ -1,6 +1,6 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_wechat/ui/components/main_appbar.dart';
+import 'package:flutter_wechat/ui/pages/discovery/discovery_nav_item.dart';
 import 'package:flutter_wechat/ui/shared/app_theme.dart';
 import 'package:flutter_wechat/core/extension/double_extension.dart';
 
@@ -14,311 +14,81 @@ class DiscoveryPage extends StatelessWidget {
       ),
       body: ListView(
         children: [
-          Container(
-            color: Colors.white,
-            margin: EdgeInsets.only(
-              bottom: 22.0.px,
+          _buildItemContainer([
+              DiscoveryNavItem(
+                title: '朋友圈',
+                imagePath: 'assets/images/circle_of_friends.png',
+                isShowBottomBorder: false,
+              ),
+          ]),
+          _buildItemContainer([
+            DiscoveryNavItem(
+              title: '视频号',
+              imagePath: 'assets/images/circle_of_friends.png',
+              isShowBottomBorder: false,
             ),
-            child: Row(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Padding(
-                  padding: EdgeInsets.symmetric(vertical: 45.0.px, horizontal: 49.0.px),
-                  child: Image.asset('assets/images/circle_of_friends.png', width: 60.0.px, height: 60.0.px,),
-                ),
-                Expanded(
-                  child: Container(
-                    height: 150.0.px,
-                    padding: EdgeInsets.fromLTRB(0, 0, 49.0.px, 0),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        Text('朋友圈', style: TextStyle(fontSize: 44.0.px),),
-                        Icon(Icons.chevron_right, color: Color(0xffb2b2b2),)
-                      ],
-                    ),
-                  ),
-                )
-              ],
+          ]),
+          _buildItemContainer([
+            DiscoveryNavItem(
+              title: '扫一扫',
+              imagePath: 'assets/images/circle_of_friends.png',
             ),
-          ),
-          Container(
-            color: Colors.white,
-            margin: EdgeInsets.only(
-              bottom: 22.0.px,
+            DiscoveryNavItem(
+              title: '摇一摇',
+              imagePath: 'assets/images/circle_of_friends.png',
+              isShowBottomBorder: false,
             ),
-            child: Row(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Padding(
-                  padding: EdgeInsets.symmetric(vertical: 45.0.px, horizontal: 49.0.px),
-                  child: Image.asset('assets/images/circle_of_friends.png', width: 60.0.px, height: 60.0.px,),
-                ),
-                Expanded(
-                  child: Container(
-                    height: 150.0.px,
-                    padding: EdgeInsets.fromLTRB(0, 0, 49.0.px, 0),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        Text('视频号', style: TextStyle(fontSize: 44.0.px),),
-                        Icon(Icons.chevron_right, color: Color(0xffb2b2b2),)
-                      ],
-                    ),
-                  ),
-                )
-              ],
+          ]),
+          _buildItemContainer([
+            DiscoveryNavItem(
+              title: '看一看',
+              imagePath: 'assets/images/circle_of_friends.png',
             ),
-          ),
-          Container(
-            color: Colors.white,
-            margin: EdgeInsets.only(
-              bottom: 22.0.px,
+            DiscoveryNavItem(
+              title: '搜一搜',
+              imagePath: 'assets/images/circle_of_friends.png',
+              isShowBottomBorder: false,
             ),
-            child: Column(
-              children: [
-                Row(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Padding(
-                      padding: EdgeInsets.symmetric(vertical: 45.0.px, horizontal: 49.0.px),
-                      child: Image.asset('assets/images/circle_of_friends.png', width: 60.0.px, height: 60.0.px,),
-                    ),
-                    Expanded(
-                      child: Container(
-                        height: 150.0.px,
-                        padding: EdgeInsets.fromLTRB(0, 0, 49.0.px, 0),
-                        decoration: BoxDecoration(
-                          border: Border(
-                            bottom: BorderSide(
-                              color: Theme.of(context).dividerColor,
-                            ),
-                          ),
-                        ),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            Text('扫一扫', style: TextStyle(fontSize: 44.0.px),),
-                            Icon(Icons.chevron_right, color: Color(0xffb2b2b2),)
-                          ],
-                        ),
-                      ),
-                    )
-                  ],
-                ),
-                Row(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Padding(
-                      padding: EdgeInsets.symmetric(vertical: 45.0.px, horizontal: 49.0.px),
-                      child: Image.asset('assets/images/circle_of_friends.png', width: 60.0.px, height: 60.0.px,),
-                    ),
-                    Expanded(
-                      child: Container(
-                        height: 150.0.px,
-                        padding: EdgeInsets.fromLTRB(0, 0, 49.0.px, 0),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            Text('摇一摇', style: TextStyle(fontSize: 44.0.px),),
-                            Icon(Icons.chevron_right, color: Color(0xffb2b2b2),)
-                          ],
-                        ),
-                      ),
-                    )
-                  ],
-                ),
-              ],
+          ]),
+          _buildItemContainer([
+            DiscoveryNavItem(
+              title: '直播与附近',
+              imagePath: 'assets/images/live_and_nearby.png',
+              isShowBottomBorder: false,
             ),
-          ),
-          Container(
-            color: Colors.white,
-            margin: EdgeInsets.only(
-              bottom: 22.0.px,
+          ]),
+          _buildItemContainer([
+            DiscoveryNavItem(
+              title: '购物',
+              imagePath: 'assets/images/shopping_icon.png',
             ),
-            child: Column(
-              children: [
-                Row(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Padding(
-                      padding: EdgeInsets.symmetric(vertical: 45.0.px, horizontal: 49.0.px),
-                      child: Image.asset('assets/images/circle_of_friends.png', width: 60.0.px, height: 60.0.px,),
-                    ),
-                    Expanded(
-                      child: Container(
-                        height: 150.0.px,
-                        padding: EdgeInsets.fromLTRB(0, 0, 49.0.px, 0),
-                        decoration: BoxDecoration(
-                          border: Border(
-                            bottom: BorderSide(
-                              color: Theme.of(context).dividerColor,
-                            ),
-                          ),
-                        ),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            Text('看一看', style: TextStyle(fontSize: 44.0.px),),
-                            Icon(Icons.chevron_right, color: Color(0xffb2b2b2),)
-                          ],
-                        ),
-                      ),
-                    )
-                  ],
-                ),
-                Row(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Padding(
-                      padding: EdgeInsets.symmetric(vertical: 45.0.px, horizontal: 49.0.px),
-                      child: Image.asset('assets/images/circle_of_friends.png', width: 60.0.px, height: 60.0.px,),
-                    ),
-                    Expanded(
-                      child: Container(
-                        height: 150.0.px,
-                        padding: EdgeInsets.fromLTRB(0, 0, 49.0.px, 0),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            Text('搜一搜', style: TextStyle(fontSize: 44.0.px),),
-                            Icon(Icons.chevron_right, color: Color(0xffb2b2b2),)
-                          ],
-                        ),
-                      ),
-                    )
-                  ],
-                ),
-              ],
+            DiscoveryNavItem(
+              title: '游戏',
+              imagePath: 'assets/images/circle_of_friends.png',
+              isShowBottomBorder: false,
             ),
-          ),
-          Container(
-            color: Colors.white,
-            margin: EdgeInsets.only(
-              bottom: 22.0.px,
+          ]),
+          _buildItemContainer([
+            DiscoveryNavItem(
+              title: '小程序',
+              imagePath: 'assets/images/applets_icon.png',
+              isShowBottomBorder: false,
             ),
-            child: Row(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Padding(
-                  padding: EdgeInsets.symmetric(vertical: 45.0.px, horizontal: 49.0.px),
-                  child: Image.asset('assets/images/live_and_nearby.png', width: 60.0.px, height: 60.0.px,),
-                ),
-                Expanded(
-                  child: Container(
-                    height: 150.0.px,
-                    padding: EdgeInsets.fromLTRB(0, 0, 49.0.px, 0),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        Text('直播与附近', style: TextStyle(fontSize: 44.0.px),),
-                        Icon(Icons.chevron_right, color: Color(0xffb2b2b2),)
-                      ],
-                    ),
-                  ),
-                )
-              ],
-            ),
-          ),
-          Container(
-            color: Colors.white,
-            margin: EdgeInsets.only(
-              bottom: 22.0.px,
-            ),
-            child: Column(
-              children: [
-                Row(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Padding(
-                      padding: EdgeInsets.symmetric(vertical: 45.0.px, horizontal: 49.0.px),
-                      child: Image.asset('assets/images/shopping_icon.png', width: 60.0.px, height: 60.0.px,),
-                    ),
-                    Expanded(
-                      child: Container(
-                        height: 150.0.px,
-                        padding: EdgeInsets.fromLTRB(0, 0, 49.0.px, 0),
-                        decoration: BoxDecoration(
-                          border: Border(
-                            bottom: BorderSide(
-                              color: Theme.of(context).dividerColor,
-                            ),
-                          ),
-                        ),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            Text('购物', style: TextStyle(fontSize: 44.0.px),),
-                            Icon(Icons.chevron_right, color: Color(0xffb2b2b2),)
-                          ],
-                        ),
-                      ),
-                    )
-                  ],
-                ),
-                Row(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Padding(
-                      padding: EdgeInsets.symmetric(vertical: 45.0.px, horizontal: 49.0.px),
-                      child: Image.asset('assets/images/circle_of_friends.png', width: 60.0.px, height: 60.0.px,),
-                    ),
-                    Expanded(
-                      child: Container(
-                        height: 150.0.px,
-                        padding: EdgeInsets.fromLTRB(0, 0, 49.0.px, 0),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            Text('游戏', style: TextStyle(fontSize: 44.0.px),),
-                            Icon(Icons.chevron_right, color: Color(0xffb2b2b2),)
-                          ],
-                        ),
-                      ),
-                    )
-                  ],
-                ),
-              ],
-            ),
-          ),
-          Container(
-            color: Colors.white,
-            margin: EdgeInsets.only(
-              bottom: 22.0.px,
-            ),
-            child: Row(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Padding(
-                  padding: EdgeInsets.symmetric(vertical: 45.0.px, horizontal: 49.0.px),
-                  child: Image.asset('assets/images/applets_icon.png', width: 60.0.px, height: 60.0.px,),
-                ),
-                Expanded(
-                  child: Container(
-                    height: 150.0.px,
-                    padding: EdgeInsets.fromLTRB(0, 0, 49.0.px, 0),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        Text('小程序', style: TextStyle(fontSize: 44.0.px),),
-                        Icon(Icons.chevron_right, color: Color(0xffb2b2b2),)
-                      ],
-                    ),
-                  ),
-                )
-              ],
-            ),
-          ),
+          ]),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildItemContainer(List<Widget> child) {
+    return Container(
+      color: Colors.white,
+      margin: EdgeInsets.only(
+        bottom: 22.0.px,
+      ),
+      child: Column(
+        children: [
+          ...child,
         ],
       ),
     );
