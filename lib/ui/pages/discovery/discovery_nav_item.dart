@@ -35,7 +35,7 @@ class DiscoveryNavItem extends StatelessWidget {
                 Text(title, style: TextStyle(fontSize: 44.0.px),),
                 Expanded(
                   child: Container(
-                    padding: EdgeInsets.fromLTRB(0, 0, 40.0.px, 0),
+                    padding: EdgeInsets.fromLTRB(0, 0, 20.0.px, 0),
                     alignment: Alignment.centerRight,
                     child: Stack(
                       clipBehavior: Clip.none,
