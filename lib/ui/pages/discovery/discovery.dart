@@ -24,29 +24,29 @@ class DiscoveryPage extends StatelessWidget {
           _buildItemContainer([
             DiscoveryNavItem(
               title: '视频号',
-              imagePath: 'assets/images/circle_of_friends.png',
+              imagePath: 'assets/images/video_icon.png',
               isShowBottomBorder: false,
             ),
           ]),
           _buildItemContainer([
             DiscoveryNavItem(
               title: '扫一扫',
-              imagePath: 'assets/images/circle_of_friends.png',
+              imagePath: 'assets/images/scan_it_icon.png',
             ),
             DiscoveryNavItem(
               title: '摇一摇',
-              imagePath: 'assets/images/circle_of_friends.png',
+              imagePath: 'assets/images/shake_icon.png',
               isShowBottomBorder: false,
             ),
           ]),
           _buildItemContainer([
             DiscoveryNavItem(
               title: '看一看',
-              imagePath: 'assets/images/circle_of_friends.png',
+              imagePath: 'assets/images/take_a_look_icon.png',
             ),
             DiscoveryNavItem(
               title: '搜一搜',
-              imagePath: 'assets/images/circle_of_friends.png',
+              imagePath: 'assets/images/search_icon.png',
               isShowBottomBorder: false,
             ),
           ]),
@@ -64,7 +64,7 @@ class DiscoveryPage extends StatelessWidget {
             ),
             DiscoveryNavItem(
               title: '游戏',
-              imagePath: 'assets/images/circle_of_friends.png',
+              imagePath: 'assets/images/game_icon.png',
               isShowBottomBorder: false,
             ),
           ]),
