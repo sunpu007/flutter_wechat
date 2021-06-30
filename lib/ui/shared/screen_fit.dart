@@ -20,6 +20,9 @@ class ScreenFit {
   static var _rpx;
   static var _px;
 
+  // 状态栏高度
+  static late double statusBarHeight;
+
   static void initialize({double standardWidth = 750}) {
     _physicalWidth = window.physicalSize.width;
     _physicalHeight = window.physicalSize.height;
@@ -28,6 +31,7 @@ class ScreenFit {
     _screenHeight = _physicalHeight / _dpr;
     _rpx = _screenWidth / standardWidth;
     _px = _screenWidth / standardWidth * 2;
+    statusBarHeight = window.padding.top;
   }
 
   static double px2Rpx(double px) {

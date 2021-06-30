@@ -4,10 +4,21 @@ class MinePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('我的'),
+      body: Container(
+        margin: EdgeInsets.fromLTRB(0, MediaQuery.of(context).padding.top, 0, 0),
+        child: Column(
+          children: [
+            Container(
+              color: Colors.white,
+              child: Row(
+                children: [
+                  Text('我的')
+                ],
+              ),
+            )
+          ],
+        ),
       ),
-      body: Text('我的'),
     );
   }
 }
