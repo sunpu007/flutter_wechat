@@ -208,7 +208,7 @@ class DiscoveryPage extends StatelessWidget {
               children: [
                 Padding(
                   padding: EdgeInsets.symmetric(vertical: 45.0.px, horizontal: 49.0.px),
-                  child: Image.asset('assets/images/circle_of_friends.png', width: 60.0.px, height: 60.0.px,),
+                  child: Image.asset('assets/images/live_and_nearby.png', width: 60.0.px, height: 60.0.px,),
                 ),
                 Expanded(
                   child: Container(
@@ -239,7 +239,7 @@ class DiscoveryPage extends StatelessWidget {
                   children: [
                     Padding(
                       padding: EdgeInsets.symmetric(vertical: 45.0.px, horizontal: 49.0.px),
-                      child: Image.asset('assets/images/circle_of_friends.png', width: 60.0.px, height: 60.0.px,),
+                      child: Image.asset('assets/images/shopping_icon.png', width: 60.0.px, height: 60.0.px,),
                     ),
                     Expanded(
                       child: Container(
@@ -300,7 +300,7 @@ class DiscoveryPage extends StatelessWidget {
               children: [
                 Padding(
                   padding: EdgeInsets.symmetric(vertical: 45.0.px, horizontal: 49.0.px),
-                  child: Image.asset('assets/images/circle_of_friends.png', width: 60.0.px, height: 60.0.px,),
+                  child: Image.asset('assets/images/applets_icon.png', width: 60.0.px, height: 60.0.px,),
                 ),
                 Expanded(
                   child: Container(

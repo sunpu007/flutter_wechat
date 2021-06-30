@@ -5,8 +5,9 @@ import 'package:flutter_wechat/ui/shared/app_theme.dart';
 class ContactPerson extends StatelessWidget {
   final String title;
   final Widget icon;
+  final bool isShowBottomBorder;
 
-  const ContactPerson({Key? key, required this.title, required this.icon}) : super(key: key);
+  const ContactPerson({Key? key, required this.title, required this.icon, this.isShowBottomBorder = true}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -28,10 +29,12 @@ class ContactPerson extends StatelessWidget {
             padding: EdgeInsets.fromLTRB(0, 32.0.px, 43.0.px, 32.0.px),
             alignment: Alignment.centerLeft,
             decoration: BoxDecoration(
-                border: Border(
+                border: isShowBottomBorder ? Border(
                     bottom: BorderSide(
                       color: Theme.of(context).dividerColor,
-                    ))),
+                    )
+                ) : null,
+            ),
             child: Text(
               title,
               style: TextStyle(

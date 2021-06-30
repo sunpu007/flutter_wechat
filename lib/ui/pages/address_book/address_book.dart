@@ -31,22 +31,23 @@ class AddressBook extends StatelessWidget {
               ..._buildNavContactPerson(),
               Classification(title: '我的企业及企业联系人'),
               ContactPerson(
-                  title: '企业微信联系人',
-                  icon: Container(
-                    alignment: Alignment.center,
-                    width: _iconWidth,
-                    height: _iconWidth,
-                    decoration: BoxDecoration(
-                      color: Color(0xff2781d7),
-                      borderRadius: BorderRadius.circular(AppTheme.defaultBorderRadius),
-                    ),
-                    child: Image.asset(
-                      'assets/images/enterprise_wechat.png',
-                      width: _iconWidth * 0.6,
-                      height: _iconWidth * 0.6,
-                      fit: BoxFit.cover,
-                    ),
+                title: '企业微信联系人',
+                icon: Container(
+                  alignment: Alignment.center,
+                  width: _iconWidth,
+                  height: _iconWidth,
+                  decoration: BoxDecoration(
+                    color: Color(0xff2781d7),
+                    borderRadius: BorderRadius.circular(AppTheme.defaultBorderRadius),
                   ),
+                  child: Image.asset(
+                    'assets/images/enterprise_wechat.png',
+                    width: _iconWidth * 0.6,
+                    height: _iconWidth * 0.6,
+                    fit: BoxFit.cover,
+                  ),
+                ),
+                isShowBottomBorder: false,
               ),
               Classification(title: 'A'),
               ContactPerson(
@@ -215,7 +216,7 @@ class AddressBook extends StatelessWidget {
           )
       ),
       ContactPerson(
-          title: '公众号',
+        title: '公众号',
           icon: Container(
             width: _iconWidth,
             height: _iconWidth,
@@ -223,8 +224,9 @@ class AddressBook extends StatelessWidget {
               color: Color(0xff2781d7),
               borderRadius: BorderRadius.circular(AppTheme.defaultBorderRadius),
             ),
-            child: Icon(Icons.person, color: Colors.white,),
-          )
+          child: Icon(Icons.person, color: Colors.white,),
+        ),
+        isShowBottomBorder: false,
       ),
     ];
   }
