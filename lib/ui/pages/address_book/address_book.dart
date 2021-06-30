@@ -94,17 +94,29 @@ class _AddressBookState extends State<AddressBook> {
 
     _addressBooks.forEach((AddressBooksModel item) {
       widgetList.add(Classification(title: item.letter),);
-      item.children.forEach((UserInfoModel userInfo) {
+      for (int i = 0; i < item.children.length; i++) {
         widgetList.add(ContactPerson(
-            title: userInfo.name,
-            icon: Image.network(
-              userInfo.avatarUrl,
-              width: _iconWidth,
-              height: _iconWidth,
-              fit: BoxFit.cover,
-            )
+          title: item.children[i].name,
+          icon: Image.network(
+            item.children[i].avatarUrl,
+            width: _iconWidth,
+            height: _iconWidth,
+            fit: BoxFit.cover,
+          ),
+          isShowBottomBorder: i != item.children.length - 1,
         ));
-      });
+      }
+      // item.children.forEach((UserInfoModel userInfo) {
+      //   widgetList.add(ContactPerson(
+      //       title: userInfo.name,
+      //       icon: Image.network(
+      //         userInfo.avatarUrl,
+      //         width: _iconWidth,
+      //         height: _iconWidth,
+      //         fit: BoxFit.cover,
+      //       )
+      //   ));
+      // });
     });
 
     return widgetList;
