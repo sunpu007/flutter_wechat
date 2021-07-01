@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_wechat/ui/components/main_appbar.dart';
+import 'package:flutter_wechat/ui/pages/circle_friends/circle_friends.dart';
 import 'package:flutter_wechat/ui/pages/discovery/discovery_nav_item.dart';
 import 'package:flutter_wechat/ui/shared/app_theme.dart';
 import 'package:flutter_wechat/core/extension/double_extension.dart';
@@ -19,6 +20,7 @@ class DiscoveryPage extends StatelessWidget {
                 title: '朋友圈',
                 imagePath: 'assets/images/circle_of_friends.png',
                 isShowBottomBorder: false,
+                jumpPath: CircleFriends.routerName,
               ),
           ]),
           _buildItemContainer([
