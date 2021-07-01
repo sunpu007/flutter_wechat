@@ -6,8 +6,9 @@ class DiscoveryNavItem extends StatelessWidget {
   final String title;
   final String imagePath;
   final bool isShowBottomBorder;
-  final String jumpPath;
-  const DiscoveryNavItem({Key? key, required this.title, required this.imagePath, this.isShowBottomBorder = true, this.jumpPath = ''}) : super(key: key);
+  final String? jumpPath;
+  final Widget? child;
+  const DiscoveryNavItem({Key? key, required this.title, required this.imagePath, this.isShowBottomBorder = true, this.jumpPath, this.child}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -39,32 +40,7 @@ class DiscoveryNavItem extends StatelessWidget {
                     child: Container(
                       padding: EdgeInsets.fromLTRB(0, 0, 20.0.px, 0),
                       alignment: Alignment.centerRight,
-                      child: Stack(
-                        clipBehavior: Clip.none,
-                        children: [
-                          ClipRRect(
-                            borderRadius: BorderRadius.circular(AppTheme.defaultBorderRadius * 0.4),
-                            child: Image.network(
-                              'https://oss-blog.myjerry.cn/avatar/blog-avatar.jpg',
-                              width: 86.0.px,
-                              height: 86.0.px,
-                              fit: BoxFit.cover,
-                            ),
-                          ),
-                          Positioned(
-                            top: -15.0.px,
-                            right: -15.0.px,
-                            child: Container(
-                              height: 30.0.px,
-                              width: 30.0.px,
-                              decoration: BoxDecoration(
-                                color: Color(0xfffa5251),
-                                borderRadius: BorderRadius.circular(30.0.px),
-                              ),
-                            ),
-                          )
-                        ],
-                      ),
+                      child: child,
                     ),
                   ),
                   Icon(Icons.chevron_right, color: Color(0xffb2b2b2),)
@@ -76,7 +52,7 @@ class DiscoveryNavItem extends StatelessWidget {
       ),
       onTap: () {
         if (jumpPath != '') {
-          Navigator.of(context).pushNamed(jumpPath);
+          Navigator.of(context).pushNamed(jumpPath!);
         }
       },
     );

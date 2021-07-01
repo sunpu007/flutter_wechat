@@ -21,6 +21,32 @@ class DiscoveryPage extends StatelessWidget {
                 imagePath: 'assets/images/circle_of_friends.png',
                 isShowBottomBorder: false,
                 jumpPath: CircleFriends.routerName,
+                child: Stack(
+                  clipBehavior: Clip.none,
+                  children: [
+                    ClipRRect(
+                      borderRadius: BorderRadius.circular(AppTheme.defaultBorderRadius * 0.4),
+                      child: Image.network(
+                        'https://oss-blog.myjerry.cn/avatar/blog-avatar.jpg',
+                        width: 86.0.px,
+                        height: 86.0.px,
+                        fit: BoxFit.cover,
+                      ),
+                    ),
+                    Positioned(
+                      top: -15.0.px,
+                      right: -15.0.px,
+                      child: Container(
+                        height: 30.0.px,
+                        width: 30.0.px,
+                        decoration: BoxDecoration(
+                          color: Color(0xfffa5251),
+                          borderRadius: BorderRadius.circular(30.0.px),
+                        ),
+                      ),
+                    )
+                  ],
+                ),
               ),
           ]),
           _buildItemContainer([
