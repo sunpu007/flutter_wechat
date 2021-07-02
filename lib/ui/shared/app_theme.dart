@@ -36,7 +36,7 @@ class AppTheme {
       textStyle: TextStyle(
         fontSize: 42.0.px
       )
-    )
+    ),
   );
 
 

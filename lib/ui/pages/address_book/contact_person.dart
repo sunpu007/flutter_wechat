@@ -42,6 +42,7 @@ class ContactPerson extends StatelessWidget {
                   border: isShowBottomBorder ? Border(
                       bottom: BorderSide(
                         color: Theme.of(context).dividerColor,
+                        width: 1.0.px,
                       )
                   ) : null,
               ),

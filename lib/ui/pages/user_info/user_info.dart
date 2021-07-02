@@ -34,6 +34,7 @@ class UserInfoPage extends StatelessWidget {
               border: Border(
                 bottom: BorderSide(
                   color: Theme.of(context).dividerColor,
+                  width: 1.0.px,
                 )
               ),
             ),
@@ -122,7 +123,8 @@ class UserInfoPage extends StatelessWidget {
       height: 150.0.px,
       shape: isShowBorder ? Border(
         bottom: BorderSide(
-          color: Theme.of(context).dividerColor
+          color: Theme.of(context).dividerColor,
+          width: 1.0.px,
         )
       ) : null,
       child: Row(
