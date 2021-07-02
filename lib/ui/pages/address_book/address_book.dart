@@ -4,9 +4,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_wechat/core/model/address_books_model.dart';
 import 'package:flutter_wechat/core/model/user_info_model.dart';
 import 'package:flutter_wechat/core/services/json_parse.dart';
+import 'package:flutter_wechat/ui/components/list_nav_item.dart';
 import 'package:flutter_wechat/ui/components/main_appbar.dart';
 import 'package:flutter_wechat/ui/pages/address_book/classification.dart';
 import 'package:flutter_wechat/ui/pages/address_book/contact_person.dart';
+import 'package:flutter_wechat/ui/pages/user_info/user_info.dart';
 import 'package:flutter_wechat/ui/shared/app_theme.dart';
 import 'package:flutter_wechat/core/extension/double_extension.dart';
 
@@ -104,19 +106,10 @@ class _AddressBookState extends State<AddressBook> {
             fit: BoxFit.cover,
           ),
           isShowBottomBorder: i != item.children.length - 1,
+          jumpPath: UserInfoPage.routerName,
+          jumpArguments: item.children[i],
         ));
       }
-      // item.children.forEach((UserInfoModel userInfo) {
-      //   widgetList.add(ContactPerson(
-      //       title: userInfo.name,
-      //       icon: Image.network(
-      //         userInfo.avatarUrl,
-      //         width: _iconWidth,
-      //         height: _iconWidth,
-      //         fit: BoxFit.cover,
-      //       )
-      //   ));
-      // });
     });
 
     return widgetList;

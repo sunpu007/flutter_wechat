@@ -6,7 +6,10 @@
         "userId": 1001,
         "name": "白铁军",
         "avatarUrl": "https://bkimg.cdn.bcebos.com/pic/43a7d933c895d143a97833e376f082025baf07e7?x-bce-process=image/resize,m_lfit,w_268,limit_1/format,f_jpg",
-        "sex": 0
+        "sex": 1,
+        "province": "陕西",
+        "city": "西安",
+        "openId": "baitiejun"
       }
     ]
   },
@@ -17,7 +20,10 @@
         "userId": 1002,
         "name": "成才",
         "avatarUrl": "https://bkimg.cdn.bcebos.com/pic/dbb44aed2e738bd4607dbc66a28b87d6277ff90d?x-bce-process=image/resize,m_lfit,w_440,limit_1/format,f_auto",
-        "sex": 0
+        "sex": 1,
+        "province": "陕西",
+        "city": "西安",
+        "openId": "chengcai"
       }
     ]
   },
@@ -28,13 +34,19 @@
         "userId": 1003,
         "name": "高城",
         "avatarUrl": "https://bkimg.cdn.bcebos.com/pic/b21bb051f819861873421b844ced2e738bd4e6ad?x-bce-process=image/crop,x_94,y_0,w_258,h_367/resize,m_lfit,w_552,limit_1/quality,Q_70/format,f_auto",
-        "sex": 0
+        "sex": 1,
+        "province": "陕西",
+        "city": "西安",
+        "openId": "gaocheng"
       },
       {
         "userId": 1004,
         "name": "甘小宁",
         "avatarUrl": "https://bkimg.cdn.bcebos.com/pic/c2fdfc039245d688525ecfd8a4c27d1ed21b2469?x-bce-process=image/watermark,image_d2F0ZXIvYmFpa2U5Mg==,g_7,xp_5,yp_5/format,f_auto",
-        "sex": 0
+        "sex": 1,
+        "province": "陕西",
+        "city": "西安",
+        "openId": "ganxiaoning"
       }
     ]
   },
@@ -45,7 +57,10 @@
         "userId": 1005,
         "name": "黑狼传说",
         "avatarUrl": "https://oss-blog.myjerry.cn/avatar/blog-avatar.jpg",
-        "sex": 0
+        "sex": 1,
+        "province": "陕西",
+        "city": "西安",
+        "openId": "heilangchuanshuo"
       }
     ]
   },
@@ -56,7 +71,10 @@
         "userId": 1006,
         "name": "齐桓",
         "avatarUrl": "https://bkimg.cdn.bcebos.com/pic/b8014a90f603738ddaeeaa23b31bb051f819ec0f?x-bce-process=image/resize,m_lfit,w_440,limit_1/format,f_auto",
-        "sex": 0
+        "sex": 1,
+        "province": "陕西",
+        "city": "西安",
+        "openId": "qihuan"
       }
     ]
   },
@@ -67,7 +85,10 @@
         "userId": 1007,
         "name": "史今",
         "avatarUrl": "https://bkimg.cdn.bcebos.com/pic/86d6277f9e2f0708797ede00ef24b899a901f2b3?x-bce-process=image/crop,x_166,y_0,w_208,h_294/resize,m_lfit,w_552,limit_1/quality,Q_70/format,f_auto",
-        "sex": 0
+        "sex": 1,
+        "province": "陕西",
+        "city": "西安",
+        "openId": "shijin"
       }
     ]
   },
@@ -78,13 +99,19 @@
         "userId": 1008,
         "name": "伍六一",
         "avatarUrl": "https://bkimg.cdn.bcebos.com/pic/35a85edf8db1cb139122c813db54564e92584b63?x-bce-process=image/crop,x_136,y_0,w_258,h_367/resize,m_lfit,w_552,limit_1/quality,Q_70/format,f_auto",
-        "sex": 0
+        "sex": 1,
+        "province": "陕西",
+        "city": "西安",
+        "openId": "wuliuyi"
       },
       {
         "userId": 1009,
         "name": "吴哲",
         "avatarUrl": "https://bkimg.cdn.bcebos.com/pic/b8389b504fc2d5623a8d24ede11190ef76c66c2d?x-bce-process=image/crop,x_0,y_0,w_277,h_393/resize,m_lfit,h_780,limit_1/quality,Q_70/format,f_auto",
-        "sex": 0
+        "sex": 1,
+        "province": "陕西",
+        "city": "西安",
+        "openId": "wuzhe"
       }
     ]
   },
@@ -95,19 +122,28 @@
         "userId": 1010,
         "name": "许百顺",
         "avatarUrl": "https://bkimg.cdn.bcebos.com/pic/b58f8c5494eef01f7bb979b5e0fe9925bc317d14?x-bce-process=image/resize,m_lfit,w_440,limit_1/format,f_auto",
-        "sex": 0
+        "sex": 1,
+        "province": "陕西",
+        "city": "西安",
+        "openId": "xubaishun"
       },
       {
         "userId": 1011,
         "name": "许二和",
         "avatarUrl": "https://bkimg.cdn.bcebos.com/pic/d788d43f8794a4c2816f19cc04f41bd5ac6e398d?x-bce-process=image/resize,m_lfit,w_235,h_235,limit_1/format,f_auto",
-        "sex": 0
+        "sex": 1,
+        "province": "陕西",
+        "city": "西安",
+        "openId": "xuerhe"
       },
       {
         "userId": 1012,
         "name": "许三多",
         "avatarUrl": "https://img1.baidu.com/it/u=3911370551,3498254142&fm=26&fmt=auto&gp=0.jpg",
-        "sex": 0
+        "sex": 1,
+        "province": "陕西",
+        "city": "西安",
+        "openId": "xusanduo"
       }
     ]
   },
@@ -118,7 +154,10 @@
         "userId": 1013,
         "name": "袁朗",
         "avatarUrl": "https://bkimg.cdn.bcebos.com/pic/4034970a304e251f652e10f8a186c9177e3e53d1?x-bce-process=image/crop,x_138,y_0,w_254,h_360/resize,m_lfit,w_552,limit_1/quality,Q_70/format,f_auto",
-        "sex": 0
+        "sex": 1,
+        "province": "陕西",
+        "city": "西安",
+        "openId": "yuanlang"
       }
     ]
   }
