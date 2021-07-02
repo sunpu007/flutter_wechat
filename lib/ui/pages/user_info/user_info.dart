@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_wechat/core/model/user_info_model.dart';
+import 'package:flutter_wechat/ui/components/list_nav_item.dart';
 import 'package:flutter_wechat/ui/shared/app_theme.dart';
 import 'package:flutter_wechat/core/extension/double_extension.dart';
 
@@ -48,6 +49,7 @@ class UserInfoPage extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Row(
+                      crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         Text(
                           userInfo.name,
@@ -67,8 +69,81 @@ class UserInfoPage extends StatelessWidget {
               ],
             ),
           ),
+          _buildItemContainer([
+            ListNavItem(
+              title: '设置备注和标签',
+            ),
+            ListNavItem(
+              title: '朋友圈权限',
+              isShowBottomBorder: false,
+            ),
+          ]),
+          _buildItemContainer([
+            ListNavItem(
+              title: '朋友圈',
+              height: 216.0.px,
+              child: Row(
+                children: [
+                  Image.network(userInfo.avatarUrl, height: 130.0.px, width: 130.0.px, fit: BoxFit.cover,)
+                ],
+              ),
+            ),
+            ListNavItem(
+              title: '更多信息',
+              isShowBottomBorder: false,
+            ),
+          ]),
+          _buildItemContainer([
+            _buildButton(context, Icons.messenger, '发消息'),
+            _buildButton(context, Icons.videocam_outlined, '音视频通话', isShowBorder: false),
+          ]),
         ],
       ),
+    );
+  }
+
+  Widget _buildItemContainer(List<Widget> child) {
+    return Container(
+      color: Colors.white,
+      margin: EdgeInsets.only(
+        bottom: 22.0.px,
+      ),
+      child: Column(
+        children: [
+          ...child,
+        ],
+      ),
+    );
+  }
+
+  Widget _buildButton(context, IconData icon, String title, { bool isShowBorder = true }) {
+    return MaterialButton(
+      minWidth: double.infinity,
+      height: 150.0.px,
+      shape: isShowBorder ? Border(
+        bottom: BorderSide(
+          color: Theme.of(context).dividerColor
+        )
+      ) : null,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Icon(
+            icon,
+            size: 49.0.px,
+            color: Color(0xff586b96),
+          ),
+          SizedBox(width: 30.0.px,),
+          Text(
+            title,
+            style: TextStyle(
+              fontSize: 42.0.px,
+              color: Color(0xff586b96),
+            ),
+          ),
+        ],
+      ),
+      onPressed: () {},
     );
   }
 }

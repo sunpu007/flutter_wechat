@@ -18,7 +18,7 @@ class MinePage extends StatelessWidget {
                 bottom: 22.0.px,
               ),
               child: Row(
-                // crossAxisAlignment: CrossAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   ClipRRect(
                     borderRadius: BorderRadius.circular(AppTheme.defaultBorderRadius),
@@ -36,20 +36,36 @@ class MinePage extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text('黑狼传说', style: TextStyle(fontSize: 44.0.px, fontWeight: FontWeight.bold),),
+                        SizedBox(
+                          height: 30.0.px,
+                        ),
                         Row(
                           children: [
-                            Text('微信号：'),
+                            Text(
+                              '微信号：',
+                              style: TextStyle(
+                                fontSize: 34.0.px,
+                                color: Color(0xffb2b2b2),
+                              ),
+                            ),
                             Expanded(
-                              child: Text('wxid_jdgn3sjky4e12dnmhdn345mk', overflow: TextOverflow.ellipsis,),
+                              child: Text(
+                                'wxid_jdgn3sjky4e12dnmhdn345mk',
+                                overflow: TextOverflow.ellipsis,
+                                style: TextStyle(
+                                  fontSize: 34.0.px,
+                                  color: Color(0xffb2b2b2),
+                                ),
+                              ),
                             ),
                             SizedBox(width: 70.0.px,),
-                            Icon(Icons.qr_code_2)
+                            Icon(Icons.qr_code_2, size: 33.0.px, color: Color(0xffb2b2b2),)
                           ],
-                        )
+                        ),
                       ],
                     ),
                   ),
-                  Icon(Icons.chevron_right)
+                  Icon(Icons.chevron_right, color: Color(0xffb2b2b2))
                 ],
               ),
             ),
