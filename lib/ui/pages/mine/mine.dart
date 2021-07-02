@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_wechat/core/extension/double_extension.dart';
+import 'package:flutter_wechat/ui/components/list_nav_item.dart';
 import 'package:flutter_wechat/ui/shared/app_theme.dart';
 
 class MinePage extends StatelessWidget {
@@ -13,6 +14,9 @@ class MinePage extends StatelessWidget {
             Container(
               padding: EdgeInsets.fromLTRB(65.0.px, 130.0.px, 45.0.px, 65.0.px),
               color: Colors.white,
+              margin: EdgeInsets.only(
+                bottom: 22.0.px,
+              ),
               child: Row(
                 // crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -48,9 +52,56 @@ class MinePage extends StatelessWidget {
                   Icon(Icons.chevron_right)
                 ],
               ),
-            )
+            ),
+            _buildItemContainer([
+              ListNavItem(
+                title: '支付',
+                imagePath: 'assets/images/wechat_pay.png',
+                isShowBottomBorder: false,
+              ),
+            ]),
+            _buildItemContainer([
+              ListNavItem(
+                title: '收藏',
+                imagePath: 'assets/images/favorites_icon.png',
+              ),
+              ListNavItem(
+                title: '朋友圈',
+                leading: Icon(Icons.insert_photo_outlined, color: Color(0xff2781d7), size: 60.0.px,),
+              ),
+              ListNavItem(
+                title: '卡包',
+                leading: Icon(Icons.credit_card_outlined, color: Color(0xff2781d7), size: 60.0.px,),
+              ),
+              ListNavItem(
+                title: '表情',
+                leading: Icon(Icons.emoji_emotions_outlined, color: Color(0xfffa9e3b), size: 60.0.px,),
+                isShowBottomBorder: false,
+              ),
+            ]),
+            _buildItemContainer([
+              ListNavItem(
+                title: '设置',
+                leading: Icon(Icons.settings_outlined, color: Color(0xff2781d7), size: 60.0.px,),
+                isShowBottomBorder: false,
+              ),
+            ]),
           ],
         ),
+      ),
+    );
+  }
+
+  Widget _buildItemContainer(List<Widget> child) {
+    return Container(
+      color: Colors.white,
+      margin: EdgeInsets.only(
+        bottom: 22.0.px,
+      ),
+      child: Column(
+        children: [
+          ...child,
+        ],
       ),
     );
   }
