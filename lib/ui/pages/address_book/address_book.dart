@@ -2,9 +2,7 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_wechat/core/model/address_books_model.dart';
-import 'package:flutter_wechat/core/model/user_info_model.dart';
 import 'package:flutter_wechat/core/services/json_parse.dart';
-import 'package:flutter_wechat/ui/components/list_nav_item.dart';
 import 'package:flutter_wechat/ui/components/main_appbar.dart';
 import 'package:flutter_wechat/ui/pages/address_book/classification.dart';
 import 'package:flutter_wechat/ui/pages/address_book/contact_person.dart';

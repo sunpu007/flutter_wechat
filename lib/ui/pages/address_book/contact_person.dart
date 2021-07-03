@@ -9,6 +9,7 @@ class ContactPerson extends StatelessWidget {
   final String? jumpPath;
   final Object? jumpArguments;
 
+
   const ContactPerson({
     Key? key,
     required this.title,
