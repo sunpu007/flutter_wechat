@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_wechat/core/model/user_info_model.dart';
 import 'package:flutter_wechat/ui/components/list_nav_item.dart';
+import 'package:flutter_wechat/ui/pages/chat/chat.dart';
 import 'package:flutter_wechat/ui/shared/app_theme.dart';
 import 'package:flutter_wechat/core/extension/double_extension.dart';
 
@@ -145,7 +146,9 @@ class UserInfoPage extends StatelessWidget {
           ),
         ],
       ),
-      onPressed: () {},
+      onPressed: () {
+        Navigator.of(context).pushNamed(ChatPage.routerName);
+      },
     );
   }
 }
