@@ -65,7 +65,7 @@ class ListNavItem extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
+          children: <Widget>[
             Container(
               constraints: BoxConstraints(
                 minWidth: 183.0.px,
