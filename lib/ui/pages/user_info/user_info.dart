@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_wechat/core/model/user_info_model.dart';
 import 'package:flutter_wechat/ui/components/list_nav_item.dart';
+import 'package:flutter_wechat/ui/components/picture_preview.dart';
 import 'package:flutter_wechat/ui/pages/chat/chat.dart';
 import 'package:flutter_wechat/ui/shared/app_theme.dart';
 import 'package:flutter_wechat/core/extension/double_extension.dart';
@@ -42,9 +43,12 @@ class UserInfoPage extends StatelessWidget {
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                ClipRRect(
-                  borderRadius: BorderRadius.circular(AppTheme.defaultBorderRadius),
-                  child: Image.network(userInfo.avatarUrl, width: 173.0.px, height: 173.0.px, fit: BoxFit.cover,)
+                PicturePreviewComponent(
+                  imagePath: userInfo.avatarUrl,
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(AppTheme.defaultBorderRadius),
+                    child: Image.network(userInfo.avatarUrl, width: 173.0.px, height: 173.0.px, fit: BoxFit.cover,)
+                  ),
                 ),
                 SizedBox(width: 59.0.px,),
                 Column(
