@@ -5,17 +5,44 @@ import 'package:flutter/material.dart';
 import 'package:flutter_wechat/ui/shared/app_theme.dart';
 import 'package:flutter_wechat/core/extension/double_extension.dart';
 
-class ChatPage extends StatelessWidget {
+class ChatPage extends StatefulWidget {
   static const String routerName = '/chat';
 
   const ChatPage({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
-    ScrollController _listViewController = ScrollController();
+  _ChatPageState createState() => _ChatPageState();
+}
+
+class _ChatPageState extends State<ChatPage> with WidgetsBindingObserver {
+  ScrollController _listViewController = ScrollController();
+
+  @override
+  initState() {
+    super.initState();
     // 默认滚动到最底部
     Timer(Duration(milliseconds: 100), () => _listViewController.jumpTo(_listViewController.position.maxScrollExtent));
+    WidgetsBinding.instance!.addObserver(this);
+  }
 
+  @override
+  void didChangeMetrics() {
+    super.didChangeMetrics();
+    WidgetsBinding.instance!.addPostFrameCallback((_) {
+      setState(() {
+        _listViewController.jumpTo(_listViewController.position.maxScrollExtent);
+      });
+    });
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    WidgetsBinding.instance!.removeObserver(this);
+  }
+
+  @override
+  Widget build(BuildContext context) {
     return Scaffold(
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(AppTheme.appBarHeight),
