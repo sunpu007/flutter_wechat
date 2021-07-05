@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_wechat/core/model/message_model.dart';
 import 'package:flutter_wechat/ui/pages/chat/chat.dart';
 import 'package:flutter_wechat/ui/shared/app_theme.dart';
 import 'package:flutter_wechat/core/extension/double_extension.dart';
 
 class UserListItem extends StatelessWidget {
-  const UserListItem({Key? key}) : super(key: key);
+  final MessageModel messageModel;
+
+  const UserListItem({Key? key, required this.messageModel}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +24,7 @@ class UserListItem extends StatelessWidget {
             child: ClipRRect(
               borderRadius: BorderRadius.circular(AppTheme.defaultBorderRadius),
               child: Image.network(
-                'https://oss-blog.myjerry.cn/avatar/blog-avatar.jpg',
+                messageModel.userInfo!.avatarUrl,
                 width: 130.0.px,
                 height: 130.0.px,
                 fit: BoxFit.cover,
@@ -48,7 +51,7 @@ class UserListItem extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        '黑狼传说',
+                        messageModel.userInfo!.name,
                         style: TextStyle(
                           fontSize: 44.0.px,
                         ),
@@ -66,7 +69,7 @@ class UserListItem extends StatelessWidget {
                     children: [
                       Expanded(
                         child: Text(
-                          '程序员开始开发啦程序员开始开发啦程序员开始开发啦程序员开始开发啦',
+                          messageModel.message,
                           overflow: TextOverflow.ellipsis,
                           style: TextStyle(
                             fontSize: 34.0.px,
@@ -78,7 +81,7 @@ class UserListItem extends StatelessWidget {
                         width: 50.0.px,
                       ),
                       Icon(
-                        Icons.notifications_off_outlined,
+                        messageModel.isNotDisturb == 0 ?  Icons.notifications_off_outlined : null,
                         size: 50.0.px,
                         color: Color(0xffb2b2b2),
                       ),
