@@ -1,9 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_wechat/core/router/router.dart';
+import 'package:flutter_wechat/core/viewmodel/user_view_model.dart';
 import 'package:flutter_wechat/ui/shared/app_theme.dart';
 import 'package:flutter_wechat/ui/shared/screen_fit.dart';
+import 'package:provider/provider.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(
+  MultiProvider(
+    providers: [
+      ChangeNotifierProvider(create: (_) => UserViewModel()),
+    ],
+    child: MyApp(),
+  )
+);
 
 class MyApp extends StatelessWidget {
   @override

@@ -3,6 +3,7 @@ import 'package:flutter_wechat/ui/pages/address_book/address_book.dart';
 import 'package:flutter_wechat/ui/pages/discovery/discovery.dart';
 import 'package:flutter_wechat/ui/pages/message/message.dart';
 import 'package:flutter_wechat/ui/pages/mine/mine.dart';
+import 'package:provider/provider.dart';
 
 class MainPage extends StatefulWidget {
   static const String routerName = '/';
