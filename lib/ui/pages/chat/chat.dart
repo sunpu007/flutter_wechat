@@ -173,6 +173,8 @@ class _ChatPageState extends State<ChatPage> with WidgetsBindingObserver {
               ),
               child: TextField(
                 decoration: InputDecoration(
+                  contentPadding: EdgeInsets.all(0.0),
+                  isCollapsed: true,
                   border: OutlineInputBorder(
                     borderSide: BorderSide.none,
                   ),
