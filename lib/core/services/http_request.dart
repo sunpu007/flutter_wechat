@@ -13,10 +13,13 @@ class HttpRequest {
   static final List<Interceptor> interceptors = <Interceptor>[
     InterceptorsWrapper(
       onRequest: (RequestOptions options, RequestInterceptorHandler handler) {
+        print('onRequest');
       },
       onResponse: (Response response, ResponseInterceptorHandler handler) {
+        print('onResponse');
       },
       onError: (DioError error, ErrorInterceptorHandler handler) {
+        print('onError');
       }
     )
   ];
@@ -27,7 +30,7 @@ class HttpRequest {
     if (inter != null) {
       interceptors.add(inter);
     }
-    _dio.interceptors.addAll(interceptors);
+    // _dio.interceptors.addAll(interceptors);
 
     final Options options = Options(method: method, headers: headers,);
 
