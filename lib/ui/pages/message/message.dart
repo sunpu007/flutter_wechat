@@ -19,7 +19,6 @@ class _MessagePageState extends State<MessagePage> {
   initState() {
     super.initState();
     MessageRequest.getMessageData().then((value) {
-      print(value);
       setState(() {
         messages = value;
       });

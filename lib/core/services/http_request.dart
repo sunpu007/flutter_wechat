@@ -14,12 +14,15 @@ class HttpRequest {
     InterceptorsWrapper(
       onRequest: (RequestOptions options, RequestInterceptorHandler handler) {
         print('onRequest');
+        return handler.next(options);
       },
       onResponse: (Response response, ResponseInterceptorHandler handler) {
         print('onResponse');
+        return handler.next(response);
       },
       onError: (DioError error, ErrorInterceptorHandler handler) {
         print('onError');
+        return handler.next(error);
       }
     )
   ];
@@ -30,7 +33,7 @@ class HttpRequest {
     if (inter != null) {
       interceptors.add(inter);
     }
-    // _dio.interceptors.addAll(interceptors);
+    _dio.interceptors.addAll(interceptors);
 
     final Options options = Options(method: method, headers: headers,);
 
