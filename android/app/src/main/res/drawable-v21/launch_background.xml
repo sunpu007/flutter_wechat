@@ -6,7 +6,7 @@
     <!-- You can insert your own image assets here -->
     <item>
         <bitmap
-            android:gravity="center"
+            android:gravity="fitXY"
             android:src="@mipmap/launch_image" />
     </item>
 </layer-list>
