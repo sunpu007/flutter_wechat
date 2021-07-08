@@ -24,6 +24,9 @@ class HttpRequest {
   static Future<T> request<T>(String url, {
     String method = 'get', Map<String, dynamic>? params, Map<String, dynamic>? headers, Interceptor? inter}) async {
 
+    interceptors.add(inter!);
+    _dio.interceptors.addAll(interceptors);
+
     final Options options = Options(method: method, headers: headers,);
 
     try {
