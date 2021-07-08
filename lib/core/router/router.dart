@@ -6,8 +6,8 @@ import 'package:flutter_wechat/ui/pages/user_info/user_info.dart';
 
 class AppRouter {
 
-  // static final String initialRoute = MainPage.routerName;
-  static final String initialRoute = LoginPage.routerName;
+  static final String initialRoute = MainPage.routerName;
+  // static final String initialRoute = LoginPage.routerName;
 
   static final routers = {
     LoginPage.routerName: (ctx) => LoginPage(),
