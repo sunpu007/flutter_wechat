@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_wechat/core/extension/double_extension.dart';
+import 'package:flutter_wechat/core/viewmodel/user_view_model.dart';
 import 'package:flutter_wechat/ui/pages/index/components/build_text_field.dart';
+import 'package:flutter_wechat/ui/pages/main/main.dart';
+import 'package:provider/provider.dart';
 
 class LoginPage extends StatefulWidget {
   static const String routerName = '/login';
@@ -82,14 +85,20 @@ class _LoginPageState extends State<LoginPage> {
                   child: Text('用微信号/QQ号/邮箱登录', style: TextStyle(color: Color(0xff586b95), fontSize: 44.0.px),),
                 ),
                 SizedBox(height: 117.0.px,),
-                MaterialButton(
-                  minWidth: double.infinity,
-                  height: 130.0.px,
-                  color: (mobile.length > 0 && password.length > 0) ? Color(0xff07c160) : Color(0xffe1e1e1),
-                  textColor: (mobile.length > 0 && password.length > 0) ? Colors.white : Color(0xffb4b4b4),
-                  elevation: 0,
-                  child: Text('下一步', style: TextStyle(fontSize: 44.0.px),),
-                  onPressed: () {},
+                Consumer<UserViewModel>(
+                  builder: (ctx, userVM, child) {
+                    return  MaterialButton(
+                      minWidth: double.infinity,
+                      height: 130.0.px,
+                      color: (mobile.length > 0 && password.length > 0) ? Color(0xff07c160) : Color(0xffe1e1e1),
+                      textColor: (mobile.length > 0 && password.length > 0) ? Colors.white : Color(0xffb4b4b4),
+                      elevation: 0,
+                      child: Text('登陆', style: TextStyle(fontSize: 44.0.px),),
+                      onPressed: () {
+                        userVM.token = '123456';
+                      },
+                    );
+                  },
                 ),
               ],
             ),
