@@ -13,7 +13,7 @@ class HttpRequest {
   static final List<Interceptor> interceptors = <Interceptor>[
     InterceptorsWrapper(
       onRequest: (RequestOptions options, RequestInterceptorHandler handler) {
-        print('onRequest');
+        print('onRequest${options.uri}');
         return handler.next(options);
       },
       onResponse: (Response response, ResponseInterceptorHandler handler) {
