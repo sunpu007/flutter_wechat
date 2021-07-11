@@ -55,7 +55,7 @@ class _IndexPageState extends State<IndexPage> {
               Timer(Duration(seconds: 1), () {
                 if (userVM.token.isNotEmpty) {
                   Timer(Duration(seconds: 1), () {
-                    Navigator.of(context).pushReplacementNamed(MainPage.routerName);
+                    Navigator.pushNamedAndRemoveUntil(context, MainPage.routerName, (route) => false);
                   });
                 } else {
                   setState(() {

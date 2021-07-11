@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_wechat/core/extension/double_extension.dart';
 import 'package:flutter_wechat/core/viewmodel/user_view_model.dart';
 import 'package:flutter_wechat/ui/pages/index/components/build_text_field.dart';
+import 'package:flutter_wechat/ui/pages/main/main.dart';
 import 'package:provider/provider.dart';
 
 class LoginPage extends StatefulWidget {
@@ -96,6 +97,7 @@ class _LoginPageState extends State<LoginPage> {
                       child: Text('登陆', style: TextStyle(fontSize: 44.0.px),),
                       onPressed: () {
                         userVM.token = '123456';
+                        Navigator.pushNamedAndRemoveUntil(context, MainPage.routerName, (route) => false);
                       },
                     );
                   },
