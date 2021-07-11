@@ -3,7 +3,6 @@ import 'package:flutter/services.dart';
 import 'package:flutter_wechat/core/extension/double_extension.dart';
 import 'package:flutter_wechat/core/viewmodel/user_view_model.dart';
 import 'package:flutter_wechat/ui/pages/index/components/build_text_field.dart';
-import 'package:flutter_wechat/ui/pages/main/main.dart';
 import 'package:provider/provider.dart';
 
 class LoginPage extends StatefulWidget {
@@ -20,6 +19,7 @@ class _LoginPageState extends State<LoginPage> {
   String password = '';
 
   @override
+
   Widget build(BuildContext context) {
     return Scaffold(
       body: ListView(
