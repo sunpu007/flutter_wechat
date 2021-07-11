@@ -10,6 +10,7 @@ class ListNavItem extends StatelessWidget {
   final bool isShowBottomBorder;
   final bool isShowRightIcon;
   final String? jumpPath;
+  final GestureTapCallback? onTap;
   final Widget? child;
 
   const ListNavItem({
@@ -21,6 +22,7 @@ class ListNavItem extends StatelessWidget {
     this.isShowBottomBorder = true,
     this.isShowRightIcon = true,
     this.jumpPath,
+    this.onTap,
     this.child,
   }) : super(key: key);
 
@@ -34,7 +36,7 @@ class ListNavItem extends StatelessWidget {
           children: _buildContext(context),
         ),
       ),
-      onTap: () {
+      onTap: this.onTap != null ? this.onTap : () {
         if (this.jumpPath != null && this.jumpPath != '') {
           Navigator.of(context).pushNamed(jumpPath!);
         }

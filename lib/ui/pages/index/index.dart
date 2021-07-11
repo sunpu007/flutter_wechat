@@ -20,22 +20,30 @@ class IndexPage extends StatefulWidget {
 class _IndexPageState extends State<IndexPage> {
   bool showLoginBtn = false;
 
+  Timer? mainTimer;
+  Timer? navTimer;
+
   @override
   void initState() {
     super.initState();
   }
 
   @override
+  void dispose() {
+    super.dispose();
+    mainTimer!.cancel();
+    navTimer!.cancel();
+    context.dependOnInheritedWidgetOfExactType();
+  }
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    context.dependOnInheritedWidgetOfExactType();
+  }
+
+  @override
   Widget build(BuildContext context) {
-    // Provider.value(value: value)
-    // setState(() {
-    //   showLoginBtn = Provider.of<UserViewModel>(context).token.isEmpty;
-    // });
-    // if (Provider.of<UserViewModel>(context).token.isNotEmpty) {
-    //   Timer(Duration(seconds: 1), () {
-    //     Navigator.of(context).restorablePushReplacementNamed(MainPage.routerName);
-    //   });
-    // }
     return Scaffold(
       body: Stack(
         children: [
@@ -52,16 +60,20 @@ class _IndexPageState extends State<IndexPage> {
           ..._buildBtnWidget(),
           Consumer<UserViewModel>(
             builder: (ctx, userVM, child) {
-              Timer(Duration(seconds: 1), () {
+              mainTimer = Timer(Duration(seconds: 1), () {
                 if (userVM.token.isNotEmpty) {
-                  Timer(Duration(seconds: 1), () {
+                  navTimer = Timer(Duration(seconds: 1), () {
                     Navigator.pushNamedAndRemoveUntil(context, MainPage.routerName, (route) => false);
+                    navTimer!.cancel();
                   });
                 } else {
-                  setState(() {
-                    showLoginBtn = true;
-                  });
+                  if (mounted) {
+                    setState(() {
+                      showLoginBtn = true;
+                    });
+                  }
                 }
+                mainTimer!.cancel();
               });
               return Container();
             }
