@@ -3,6 +3,7 @@ import 'package:flutter_wechat/core/extension/double_extension.dart';
 import 'package:flutter_wechat/core/viewmodel/user_view_model.dart';
 import 'package:flutter_wechat/ui/components/list_nav_item.dart';
 import 'package:flutter_wechat/ui/pages/index/index.dart';
+import 'package:flutter_wechat/ui/pages/websocket/websocket.dart';
 import 'package:flutter_wechat/ui/shared/app_theme.dart';
 import 'package:provider/provider.dart';
 
@@ -103,6 +104,14 @@ class MinePage extends StatelessWidget {
                 title: '设置',
                 leading: Icon(Icons.settings_outlined, color: Color(0xff2781d7), size: 60.0.px,),
                 isShowBottomBorder: false,
+              ),
+            ]),
+            _buildItemContainer([
+              ListNavItem(
+                title: '测试websocket',
+                leading: Icon(Icons.connect_without_contact_outlined, color: Color(0xff2781d7), size: 60.0.px,),
+                isShowBottomBorder: false,
+                jumpPath: WebSocketPage.routerName,
               ),
             ]),
             _buildItemContainer([
