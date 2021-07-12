@@ -22,6 +22,11 @@ class _WebSocketPageState extends State<WebSocketPage> {
   );
 
   @override
+  void initState() {
+    super.initState();
+  }
+
+  @override
   void dispose() {
     _channel.sink.close();
     super.dispose();

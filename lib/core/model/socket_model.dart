@@ -35,16 +35,16 @@ class SocketModel {
 }
 
 class Cpu {
-  int? used;
+  double? used;
   String? name;
-  int? threadNumber;
+  double? threadNumber;
 
   Cpu({this.used, this.name, this.threadNumber});
 
   Cpu.fromJson(Map<String, dynamic> json) {
-    used = json['used'];
+    used = double.parse(json['used'].toString());
     name = json['name'];
-    threadNumber = json['threadNumber'];
+    threadNumber = double.parse(json['threadNumber'].toString());
   }
 
   Map<String, dynamic> toJson() {
@@ -58,7 +58,7 @@ class Cpu {
 
 class Mem {
   String? totalmem;
-  int? freemem;
+  double? freemem;
   String? usedmem;
   String? usageRate;
 
@@ -66,7 +66,7 @@ class Mem {
 
   Mem.fromJson(Map<String, dynamic> json) {
     totalmem = json['totalmem'];
-    freemem = json['freemem'];
+    freemem = double.parse(json['freemem'].toString());
     usedmem = json['usedmem'];
     usageRate = json['usageRate'];
   }
@@ -121,16 +121,16 @@ class Sys {
 class Disk {
   String? total;
   String? available;
-  int? used;
-  int? usageRate;
+  double? used;
+  double? usageRate;
 
   Disk({this.total, this.available, this.used, this.usageRate});
 
   Disk.fromJson(Map<String, dynamic> json) {
     total = json['total'];
     available = json['available'];
-    used = json['used'];
-    usageRate = json['usageRate'];
+    used = double.parse(json['used'].toString());
+    usageRate = double.parse(json['usageRate'].toString());
   }
 
   Map<String, dynamic> toJson() {
