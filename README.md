@@ -6,7 +6,7 @@
 
 ## 前序准备
 
-你需呀在本地安装 [flutter](https://flutter.dev/docs/get-started/install) 和 [git](https://git-scm.com/)。本项目技术栈基于 [dio](https://pub.dev/packages/dio)、[provider](https://pub.dev/packages/provider)、[shared_preferences](https://pub.dev/packages/shared_preferences)、[web_socket_channel](https://pub.dev/packages/web_socket_channel)、[image_picker](https://pub.dev/packages/image_picker)。
+你需呀在本地安装 [flutter](https://flutter.dev/docs/get-started/install) 和 [git](https://git-scm.com/)。本项目技术栈基于 [dio](https://pub.dev/packages/dio)、[provider](https://pub.dev/packages/provider)、[shared_preferences](https://pub.dev/packages/shared_preferences)、[web_socket_channel](https://pub.dev/packages/web_socket_channel)、[image_picker](https://pub.dev/packages/image_picker)，所有请求都基于静态模式。
 
 ## 开发
 
