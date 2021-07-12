@@ -1,22 +1,24 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_wechat/core/extension/double_extension.dart';
 
 class BuildTextField extends StatefulWidget {
   final String label;
   final String placeholder;
-  final ValidatorMap? rules;
+  final FormFieldValidator<String>? validator;
   final bool obscureText;
   final TextInputType? keyboardType;
   final ValueChanged<String>? onChanged;
+  final TextEditingController? controller;
 
-  const BuildTextField({Key? key, required this.label, required this.placeholder, this.rules, this.obscureText = false, this.keyboardType, this.onChanged,}) : super(key: key);
+  const BuildTextField({Key? key, required this.label, required this.placeholder, this.validator, this.obscureText = false, this.keyboardType, this.onChanged, this.controller,}) : super(key: key);
 
   @override
   _BuildTextFieldState createState() => _BuildTextFieldState();
 }
 
 class _BuildTextFieldState extends State<BuildTextField> {
-  String _errorText = '';
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -37,13 +39,13 @@ class _BuildTextFieldState extends State<BuildTextField> {
             child: Text(widget.label, style: TextStyle(fontSize: 50.0.px),),
           ),
           Expanded(
-            child: TextField(
+            child: TextFormField(
+              controller: widget.controller,
               obscureText: widget.obscureText,
               keyboardType: widget.keyboardType,
               decoration: InputDecoration(
                 hintText: widget.placeholder,
                 hintStyle: TextStyle(color: Color(0xffa6a6a6)),
-                errorText: _errorText == '' ? null : _errorText,
                 contentPadding: EdgeInsets.all(0.0),
                 isCollapsed: true,
                 border: OutlineInputBorder(
@@ -53,22 +55,8 @@ class _BuildTextFieldState extends State<BuildTextField> {
               style: TextStyle(
                 fontSize: 50.0.px,
               ),
-              onChanged: (String value) {
-                setState(() {
-                  _errorText = '';
-                });
-                widget.onChanged!(value);
-                if (widget.rules == null) return;
-                if (widget.rules is ValidatorMap) {
-                  try {
-                    widget.rules!.validator(value);
-                  } catch(e) {
-                    setState(() {
-                      _errorText = e.toString();
-                    });
-                  }
-                }
-              },
+              validator: widget.validator,
+              onChanged: widget.onChanged,
             ),
           ),
         ],

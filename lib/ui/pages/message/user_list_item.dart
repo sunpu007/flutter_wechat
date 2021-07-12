@@ -16,7 +16,6 @@ class UserListItem extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Container(
-            // padding: EdgeInsets.all(43.0.px),
             padding: EdgeInsets.symmetric(
               vertical: 32.0.px,
               horizontal: 43.0.px,

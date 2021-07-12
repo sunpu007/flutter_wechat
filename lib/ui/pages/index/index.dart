@@ -30,16 +30,15 @@ class _IndexPageState extends State<IndexPage> {
 
   @override
   void dispose() {
-    super.dispose();
     mainTimer!.cancel();
     navTimer!.cancel();
-    context.dependOnInheritedWidgetOfExactType();
+    super.dispose();
   }
 
   @override
   void didChangeDependencies() {
+    this.context.dependOnInheritedWidgetOfExactType();
     super.didChangeDependencies();
-    context.dependOnInheritedWidgetOfExactType();
   }
 
   @override
@@ -63,8 +62,8 @@ class _IndexPageState extends State<IndexPage> {
               mainTimer = Timer(Duration(seconds: 1), () {
                 if (userVM.token.isNotEmpty) {
                   navTimer = Timer(Duration(seconds: 1), () {
-                    Navigator.pushNamedAndRemoveUntil(context, MainPage.routerName, (route) => false);
                     navTimer!.cancel();
+                    Navigator.pushNamedAndRemoveUntil(context, MainPage.routerName, (route) => false);
                   });
                 } else {
                   if (mounted) {
