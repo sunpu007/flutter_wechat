@@ -43,6 +43,13 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "1.15.0"
+  crypto:
+    dependency: transitive
+    description:
+      name: crypto
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "3.0.1"
   cupertino_icons:
     dependency: "direct main"
     description:
@@ -284,6 +291,13 @@ packages:
     dependency: transitive
     description:
       name: vector_math
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "2.1.0"
+  web_socket_channel:
+    dependency: "direct main"
+    description:
+      name: web_socket_channel
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "2.1.0"
