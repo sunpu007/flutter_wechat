@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
     ScreenFit.initialize(standardWidth: 1080.0);
 
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Flutter微信',
       // 取消debug图标
       debugShowCheckedModeBanner: false,
       theme: AppTheme.norTheme,

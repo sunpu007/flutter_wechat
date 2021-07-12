@@ -5,6 +5,7 @@ import 'package:flutter_wechat/ui/components/list_nav_item.dart';
 import 'package:flutter_wechat/ui/pages/index/index.dart';
 import 'package:flutter_wechat/ui/pages/websocket/websocket.dart';
 import 'package:flutter_wechat/ui/shared/app_theme.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:provider/provider.dart';
 
 class MinePage extends StatelessWidget {

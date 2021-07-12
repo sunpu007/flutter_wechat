@@ -3,6 +3,8 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_wechat/core/extension/double_extension.dart';
 import 'package:flutter_wechat/core/viewmodel/user_view_model.dart';
+import 'package:flutter_wechat/ui/pages/index/register/register.dart';
+import 'package:flutter_wechat/ui/pages/language/Language.dart';
 import 'package:flutter_wechat/ui/pages/main/main.dart';
 import 'package:provider/provider.dart';
 
@@ -89,7 +91,12 @@ class _IndexPageState extends State<IndexPage> {
         Positioned(
           top: 140.0.px,
           right: 44.0.px,
-          child: Text('语言', style: TextStyle(color: Colors.white),),
+          child: GestureDetector(
+            child: Text('语言', style: TextStyle(color: Colors.white),),
+            onTap: () {
+              Navigator.of(context).pushNamed(LanguagePage.routerName);
+            },
+          ),
         ),
         Positioned(
           left: 57.0.px,
@@ -120,7 +127,12 @@ class _IndexPageState extends State<IndexPage> {
             textColor: Color(0xff07c160),
             child: Text('注册', style: TextStyle(fontSize: 44.0.px),),
             onPressed: () {
-              print('跳转注册');
+              showDialog(
+                  context: context,
+                  builder: (BuildContext context) {
+                    return RegisterPage();
+                  }
+              );
             },
           ),
         ),

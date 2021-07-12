@@ -10,8 +10,9 @@ class BuildTextField extends StatefulWidget {
   final TextInputType? keyboardType;
   final ValueChanged<String>? onChanged;
   final TextEditingController? controller;
+  final Widget? child;
 
-  const BuildTextField({Key? key, required this.label, required this.placeholder, this.validator, this.obscureText = false, this.keyboardType, this.onChanged, this.controller,}) : super(key: key);
+  const BuildTextField({Key? key, required this.label, required this.placeholder, this.validator, this.obscureText = false, this.keyboardType, this.onChanged, this.controller, this.child}) : super(key: key);
 
   @override
   _BuildTextFieldState createState() => _BuildTextFieldState();
@@ -25,10 +26,10 @@ class _BuildTextFieldState extends State<BuildTextField> {
       padding: EdgeInsets.symmetric(horizontal: 24.0.px, vertical: 52.0.px),
       decoration: BoxDecoration(
         border: Border(
-            bottom: BorderSide(
-                color: Color(0xffd8d8d8),
-                width: 2.0.px
-            )
+          bottom: BorderSide(
+            color: Color(0xffd8d8d8),
+            width: 2.0.px
+          )
         ),
       ),
       child: Row(
@@ -63,9 +64,4 @@ class _BuildTextFieldState extends State<BuildTextField> {
       ),
     );
   }
-}
-
-class ValidatorMap {
-  ValueChanged<String> validator;
-  ValidatorMap(this.validator);
 }
