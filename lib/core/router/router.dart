@@ -4,11 +4,12 @@ import 'package:flutter_wechat/ui/pages/index/index.dart';
 import 'package:flutter_wechat/ui/pages/language/Language.dart';
 import 'package:flutter_wechat/ui/pages/main/main.dart';
 import 'package:flutter_wechat/ui/pages/user_info/user_info.dart';
+import 'package:flutter_wechat/ui/pages/web_view/web_view.dart';
 import 'package:flutter_wechat/ui/pages/websocket/websocket.dart';
 
 class AppRouter {
 
-  // static final String initialRoute = LanguagePage.routerName;
+  // static final String initialRoute = WebViewPage.routerName;
   static final String initialRoute = IndexPage.routerName;
 
   static final routers = {
@@ -19,5 +20,6 @@ class AppRouter {
     ChatPage.routerName: (ctx) => ChatPage(),
     WebSocketPage.routerName: (ctx) => WebSocketPage(),
     LanguagePage.routerName: (ctx) => LanguagePage(),
+    WebViewPage.routerName: (ctx) => WebViewPage(),
   };
 }
