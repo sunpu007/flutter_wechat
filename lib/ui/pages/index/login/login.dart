@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_wechat/core/extension/double_extension.dart';
 import 'package:flutter_wechat/core/utils/utils.dart';
 import 'package:flutter_wechat/core/viewmodel/user_view_model.dart';
+import 'package:flutter_wechat/generated/l10n.dart';
 import 'package:flutter_wechat/ui/pages/index/components/build_text_field.dart';
 import 'package:flutter_wechat/ui/pages/main/main.dart';
 import 'package:provider/provider.dart';
@@ -57,7 +58,7 @@ class _LoginPageState extends State<LoginPage> {
                     ),
                   ),
                   BuildTextField(
-                    label: '手机号',
+                    label: S.of(context).phone,
                     placeholder: '请填写手机号',
                     keyboardType: TextInputType.phone,
                     validator: (value) {
@@ -97,7 +98,7 @@ class _LoginPageState extends State<LoginPage> {
                         textColor: (mobile.length > 0 && password.length > 0) ? Colors.white : Color(0xffb4b4b4),
                         elevation: 0,
                         highlightElevation: 0,
-                        child: Text('登陆', style: TextStyle(fontSize: 44.0.px),),
+                        child: Text(S.of(context).loginBtn, style: TextStyle(fontSize: 44.0.px),),
                         onPressed: () {
                           if ((mobile.length <= 0 && password.length <= 0) || !_formKey.currentState!.validate()) return;
                           userVM.token = '123456';

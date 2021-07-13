@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_wechat/core/model/language_model.dart';
 import 'package:flutter_wechat/core/services/json_parse.dart';
+import 'package:flutter_wechat/generated/l10n.dart';
 import 'package:flutter_wechat/ui/components/list_nav_item.dart';
 import 'package:flutter_wechat/ui/shared/app_theme.dart';
 import 'package:flutter_wechat/core/extension/double_extension.dart';
@@ -35,7 +36,7 @@ class _LanguagePageState extends State<LanguagePage> {
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(AppTheme.appBarHeight),
         child: AppBar(
-          title: Text('多语言'),
+          title: Text(S.of(context).language),
           // actions: [
           //   MaterialButton(
           //     height: 0.5,

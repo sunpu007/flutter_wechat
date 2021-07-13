@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_wechat/core/extension/double_extension.dart';
 import 'package:flutter_wechat/core/viewmodel/user_view_model.dart';
+import 'package:flutter_wechat/generated/l10n.dart';
 import 'package:flutter_wechat/ui/pages/index/register/register.dart';
 import 'package:flutter_wechat/ui/pages/language/Language.dart';
 import 'package:flutter_wechat/ui/pages/main/main.dart';
@@ -92,7 +93,7 @@ class _IndexPageState extends State<IndexPage> {
           top: 140.0.px,
           right: 44.0.px,
           child: GestureDetector(
-            child: Text('语言', style: TextStyle(color: Colors.white),),
+            child: Text(S.of(context).language, style: TextStyle(color: Colors.white),),
             onTap: () {
               Navigator.of(context).pushNamed(LanguagePage.routerName);
             },
@@ -106,7 +107,7 @@ class _IndexPageState extends State<IndexPage> {
             height: 130.0.px,
             color: Color(0xff07c160),
             textColor: Colors.white,
-            child: Text('登录', style: TextStyle(fontSize: 44.0.px),),
+            child: Text(S.of(context).loginBtn, style: TextStyle(fontSize: 44.0.px),),
             onPressed: () {
               showDialog(
                   context: context,
@@ -125,7 +126,7 @@ class _IndexPageState extends State<IndexPage> {
             height: 130.0.px,
             color: Colors.white,
             textColor: Color(0xff07c160),
-            child: Text('注册', style: TextStyle(fontSize: 44.0.px),),
+            child: Text(S.of(context).registerBtn, style: TextStyle(fontSize: 44.0.px),),
             onPressed: () {
               showDialog(
                   context: context,
