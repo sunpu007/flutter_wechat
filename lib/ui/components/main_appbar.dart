@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_wechat/core/extension/double_extension.dart';
+import 'package:flutter_wechat/ui/pages/web_view/web_view.dart';
 import 'package:flutter_wechat/ui/shared/app_theme.dart';
+import 'package:permission_handler/permission_handler.dart';
+import 'package:qrscan/qrscan.dart' as scanner;
 
 class MainAppBarComponent extends StatelessWidget {
   final String _title;
@@ -95,9 +98,23 @@ class MainAppBarComponent extends StatelessWidget {
           ],
           onSelected: (String value) {
             print(value);
+            if (value == '扫一扫') {
+              // TODO 调起扫描二维码功能
+              _scan(context);
+            }
           },
         ),
       ],
     );
+  }
+
+  void _scan(BuildContext context) async {
+    await Permission.camera.request();
+    String? barcode = await scanner.scan();
+    // 判断扫描结果
+    if (barcode != null) {
+      Navigator.of(context).pushNamed(WebViewPage.routerName, arguments: barcode);
+    }
+    print('扫描结果$barcode');
   }
 }

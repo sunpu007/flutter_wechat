@@ -27,6 +27,9 @@ class _WebViewPageState extends State<WebViewPage> {
 
   @override
   Widget build(BuildContext context) {
+
+    String initialUrl = ModalRoute.of(context)!.settings.arguments as String;
+
     return Scaffold(
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(AppTheme.appBarHeight),
@@ -35,19 +38,19 @@ class _WebViewPageState extends State<WebViewPage> {
         ),
       ),
       body: WebView(
-        initialUrl: 'http://admin-demo.myjerry.cn/',
+        initialUrl: initialUrl,
         javascriptMode: JavascriptMode.unrestricted,
         onWebViewCreated: (WebViewController controller) {
           setState(() {
             _controller = controller;
           });
-          controller.getTitle().then((value) {
+        },
+        onPageFinished: (String value) {
+          _controller!.getTitle().then((value) {
             setState(() {
               _pageTitle = value.toString();
             });
           });
-        },
-        onPageFinished: (String value) {
           _controller!.evaluateJavascript('document.cookie = "vue_admin_template_token=eyJhZG1pbklkIjoxLCJ1c2VybmFtZSI6ImFkbWluIiwiYXZhdGFyVXJsIjoiaHR0cHM6Ly9vc3MtYmxvZy5teWplcnJ5LmNuL2F2YXRhci9ibG9nLWF2YXRhci5qcGcifQ==; path=/');
         },
       ),
