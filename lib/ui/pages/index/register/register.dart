@@ -75,7 +75,7 @@ class _RegisterPageState extends State<RegisterPage> {
                     placeholder: '请填写手机号',
                     keyboardType: TextInputType.phone,
                     validator: (value) {
-                      if (!checkMobile(value)) return '手机号有误';
+                      if (!checkMobile(value!)) return '手机号有误';
                     },
                     onChanged: (value) {
                       setState(() {
