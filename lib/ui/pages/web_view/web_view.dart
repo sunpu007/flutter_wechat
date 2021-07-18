@@ -53,12 +53,8 @@ class _WebViewPageState extends State<WebViewPage> {
     if (await _controller!.canGoBack()) {
       _controller!.goBack();
       return Future.value(false);
-    } else {
-      // ScaffoldMessenger.of(context).showSnackBar(
-      //   const SnackBar(content: Text("No back history item")),
-      // );
-      return Future.value(true);
     }
+    return Future.value(true);
   }
 
   Widget _buildBody(BuildContext context, String initialUrl) {
@@ -72,6 +68,9 @@ class _WebViewPageState extends State<WebViewPage> {
   }
 
   Widget _buildWebView(BuildContext context, String initialUrl) {
+
+    if (!initialUrl.startsWith('http')) initialUrl = 'http://' + initialUrl;
+
     return Stack(
       children: [
         WebView(
@@ -88,7 +87,7 @@ class _WebViewPageState extends State<WebViewPage> {
                 _pageTitle = value.toString();
               });
             });
-            _controller!.evaluateJavascript('document.cookie = "vue_admin_template_token=eyJhZG1pbklkIjoxLCJ1c2VybmFtZSI6ImFkbWluIiwiYXZhdGFyVXJsIjoiaHR0cHM6Ly9vc3MtYmxvZy5teWplcnJ5LmNuL2F2YXRhci9ibG9nLWF2YXRhci5qcGcifQ==; path=/');
+            // _controller!.evaluateJavascript('document.cookie = "vue_admin_template_token=eyJhZG1pbklkIjoxLCJ1c2VybmFtZSI6ImFkbWluIiwiYXZhdGFyVXJsIjoiaHR0cHM6Ly9vc3MtYmxvZy5teWplcnJ5LmNuL2F2YXRhci9ibG9nLWF2YXRhci5qcGcifQ==; path=/');
           },
           onProgress: (int progress) {
             setState(() {
