@@ -1,10 +1,14 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_wechat/core/extension/double_extension.dart';
 import 'package:flutter_wechat/core/utils/utils.dart';
 import 'package:flutter_wechat/core/viewmodel/user_view_model.dart';
 import 'package:flutter_wechat/generated/l10n.dart';
+import 'package:flutter_wechat/ui/components/crop_image.dart';
 import 'package:flutter_wechat/ui/pages/index/components/build_text_field.dart';
 import 'package:flutter_wechat/ui/pages/main/main.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:provider/provider.dart';
 
 class RegisterPage extends StatefulWidget {
@@ -20,6 +24,8 @@ class _RegisterPageState extends State<RegisterPage> {
   String mobile = '';
   String password = '';
 
+  File? _img;
+
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
   @override
@@ -33,7 +39,7 @@ class _RegisterPageState extends State<RegisterPage> {
               padding: EdgeInsets.fromLTRB(44.0.px, 44.0.px, 44.0.px, 0),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
+                children: <Widget>[
                   GestureDetector(
                     child: Icon(Icons.close, size: 88.0.px,),
                     onTap: () {
@@ -48,13 +54,36 @@ class _RegisterPageState extends State<RegisterPage> {
                     placeholder: '例如：陈晨',
                     keyboardType: TextInputType.phone,
                     validator: (value) {
-                      // if (!checkMobile(value)) return '手机号有误';
                     },
                     onChanged: (value) {
-                      // setState(() {
-                      //   mobile = value;
-                      // });
                     },
+                    rightWidget: GestureDetector(
+                      child: Container(
+                        width: 173.0.px,
+                        height: 173.0.px,
+                        color: Color(0xffdddddd),
+                        margin: EdgeInsets.only(left: 28.0.px),
+                        child: _img != null ? Image.file(_img!) : Icon(Icons.camera_alt, color: Colors.white,),
+                      ),
+                      onTap: () {
+                        final ImagePicker _picker = ImagePicker();
+                        _picker.pickImage(source: ImageSource.gallery).then((value) async {
+                          String path = value!.path;
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => CropImage(
+                                image: File(path)
+                              ),
+                            )
+                          ).then((path) {
+                            setState(() {
+                              _img = path;
+                            });
+                          });
+                        });
+                      },
+                    ),
                   ),
                   Container(
                     padding: EdgeInsets.symmetric(horizontal: 24.0.px, vertical: 52.0.px),
