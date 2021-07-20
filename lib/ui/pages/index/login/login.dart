@@ -41,7 +41,7 @@ class _LoginPageState extends State<LoginPage> {
                     },
                   ),
                   SizedBox(height: 148.0.px,),
-                  Text('手机号登录', style: TextStyle(fontSize: 70.0.px,),),
+                  Text(S.of(context).phoneLogin, style: TextStyle(fontSize: 70.0.px,),),
                   SizedBox(height: 100.0.px,),
                   Container(
                     padding: EdgeInsets.symmetric(horizontal: 24.0.px, vertical: 52.0.px),
@@ -49,7 +49,7 @@ class _LoginPageState extends State<LoginPage> {
                       children: [
                         Container(
                           width: 275.0.px,
-                          child: Text('国家/地区', style: TextStyle(fontSize: 50.0.px),),
+                          child: Text(S.of(context).region, style: TextStyle(fontSize: 50.0.px),),
                         ),
                         Expanded(
                           child: Text('中国大陆 （+86）', style: TextStyle(fontSize: 50.0.px, color: Color(0xff07c160)),),
@@ -71,7 +71,7 @@ class _LoginPageState extends State<LoginPage> {
                     },
                   ),
                   BuildTextField(
-                    label: '密码',
+                    label: S.of(context).password,
                     obscureText: true,
                     placeholder: '请填写密码',
                     validator: (value) {
@@ -86,7 +86,7 @@ class _LoginPageState extends State<LoginPage> {
                   Container(
                     margin: EdgeInsets.only(top: 76.0.px),
                     padding: EdgeInsets.symmetric(horizontal: 24.0.px,),
-                    child: Text('用微信号/QQ号/邮箱登录', style: TextStyle(color: Color(0xff586b95), fontSize: 44.0.px),),
+                    child: Text(S.of(context).otherLogin, style: TextStyle(color: Color(0xff586b95), fontSize: 44.0.px),),
                   ),
                   SizedBox(height: 117.0.px,),
                   Consumer<UserViewModel>(

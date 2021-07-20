@@ -2,5 +2,9 @@
   "loginBtn": "Log In",
   "registerBtn": "Sign Up",
   "language": "Language",
-  "phone": "Phone"
+  "phoneLogin": "Log In Via Mobile Number",
+  "region": "Region",
+  "phone": "Phone",
+  "password": "Password",
+  "otherLogin": "Log in via WeChat ID/Email/QQ ID"
 }

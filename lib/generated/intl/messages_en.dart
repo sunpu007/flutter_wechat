@@ -23,7 +23,13 @@ class MessageLookup extends MessageLookupByLibrary {
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "language": MessageLookupByLibrary.simpleMessage("Language"),
         "loginBtn": MessageLookupByLibrary.simpleMessage("Log In"),
+        "otherLogin": MessageLookupByLibrary.simpleMessage(
+            "Log in via WeChat ID/Email/QQ ID"),
+        "password": MessageLookupByLibrary.simpleMessage("Password"),
         "phone": MessageLookupByLibrary.simpleMessage("Phone"),
+        "phoneLogin":
+            MessageLookupByLibrary.simpleMessage("Log In Via Mobile Number"),
+        "region": MessageLookupByLibrary.simpleMessage("Region"),
         "registerBtn": MessageLookupByLibrary.simpleMessage("Sign Up")
       };
 }

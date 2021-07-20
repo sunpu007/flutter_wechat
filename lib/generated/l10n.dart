@@ -80,11 +80,51 @@ class S {
     );
   }
 
+  /// `Log In Via Mobile Number`
+  String get phoneLogin {
+    return Intl.message(
+      'Log In Via Mobile Number',
+      name: 'phoneLogin',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Region`
+  String get region {
+    return Intl.message(
+      'Region',
+      name: 'region',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Phone`
   String get phone {
     return Intl.message(
       'Phone',
       name: 'phone',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Password`
+  String get password {
+    return Intl.message(
+      'Password',
+      name: 'password',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Log in via WeChat ID/Email/QQ ID`
+  String get otherLogin {
+    return Intl.message(
+      'Log in via WeChat ID/Email/QQ ID',
+      name: 'otherLogin',
       desc: '',
       args: [],
     );

@@ -2,5 +2,9 @@
   "loginBtn": "登录",
   "registerBtn": "注册",
   "language": "语言",
-  "phone": "手机号"
+  "phoneLogin": "手机号登陆",
+  "region": "国家/地区",
+  "phone": "手机号",
+  "password": "密码",
+  "otherLogin": "用微信号/QQ号/邮箱登录"
 }
