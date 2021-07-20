@@ -48,10 +48,10 @@ class _RegisterPageState extends State<RegisterPage> {
                     },
                   ),
                   SizedBox(height: 148.0.px,),
-                  Text('手机号注册', style: TextStyle(fontSize: 70.0.px,),),
+                  Text(S.of(context).phoneRegister, style: TextStyle(fontSize: 70.0.px,),),
                   SizedBox(height: 100.0.px,),
                   BuildTextField(
-                    label: '昵称',
+                    label: S.of(context).name,
                     placeholder: '例如：陈晨',
                     keyboardType: TextInputType.phone,
                     validator: (value) {
@@ -92,7 +92,7 @@ class _RegisterPageState extends State<RegisterPage> {
                       children: [
                         Container(
                           width: 275.0.px,
-                          child: Text('国家/地区', style: TextStyle(fontSize: 50.0.px),),
+                          child: Text(S.of(context).region, style: TextStyle(fontSize: 50.0.px),),
                         ),
                         Expanded(
                           child: Text('中国大陆 （+86）', style: TextStyle(fontSize: 50.0.px, color: Color(0xff07c160)),),
@@ -114,7 +114,7 @@ class _RegisterPageState extends State<RegisterPage> {
                     },
                   ),
                   BuildTextField(
-                    label: '密码',
+                    label: S.of(context).password,
                     obscureText: true,
                     placeholder: '请填写密码',
                     validator: (value) {
@@ -150,7 +150,7 @@ class _RegisterPageState extends State<RegisterPage> {
                         textColor: (mobile.length > 0 && password.length > 0) ? Colors.white : Color(0xffb4b4b4),
                         elevation: 0,
                         highlightElevation: 0,
-                        child: Text('注册', style: TextStyle(fontSize: 44.0.px),),
+                        child: Text(S.of(context).registerBtn, style: TextStyle(fontSize: 44.0.px),),
                         onPressed: () {
                           if ((mobile.length <= 0 && password.length <= 0) || !_formKey.currentState!.validate()) return;
                           userVM.token = '123456';

@@ -23,10 +23,12 @@ class MessageLookup extends MessageLookupByLibrary {
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "language": MessageLookupByLibrary.simpleMessage("语言"),
         "loginBtn": MessageLookupByLibrary.simpleMessage("登录"),
+        "name": MessageLookupByLibrary.simpleMessage("昵称"),
         "otherLogin": MessageLookupByLibrary.simpleMessage("用微信号/QQ号/邮箱登录"),
         "password": MessageLookupByLibrary.simpleMessage("密码"),
         "phone": MessageLookupByLibrary.simpleMessage("手机号"),
         "phoneLogin": MessageLookupByLibrary.simpleMessage("手机号登陆"),
+        "phoneRegister": MessageLookupByLibrary.simpleMessage("手机号注册"),
         "region": MessageLookupByLibrary.simpleMessage("国家/地区"),
         "registerBtn": MessageLookupByLibrary.simpleMessage("注册")
       };

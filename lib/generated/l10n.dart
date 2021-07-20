@@ -90,6 +90,16 @@ class S {
     );
   }
 
+  /// `Sign up by phone number`
+  String get phoneRegister {
+    return Intl.message(
+      'Sign up by phone number',
+      name: 'phoneRegister',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Region`
   String get region {
     return Intl.message(
@@ -115,6 +125,16 @@ class S {
     return Intl.message(
       'Password',
       name: 'password',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Name`
+  String get name {
+    return Intl.message(
+      'Name',
+      name: 'name',
       desc: '',
       args: [],
     );

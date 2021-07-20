@@ -3,8 +3,10 @@
   "registerBtn": "Sign Up",
   "language": "Language",
   "phoneLogin": "Log In Via Mobile Number",
+  "phoneRegister": "Sign up by phone number",
   "region": "Region",
   "phone": "Phone",
   "password": "Password",
+  "name": "Name",
   "otherLogin": "Log in via WeChat ID/Email/QQ ID"
 }
