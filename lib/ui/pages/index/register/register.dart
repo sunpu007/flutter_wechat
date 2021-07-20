@@ -9,6 +9,7 @@ import 'package:flutter_wechat/ui/components/crop_image.dart';
 import 'package:flutter_wechat/ui/pages/index/components/build_text_field.dart';
 import 'package:flutter_wechat/ui/pages/main/main.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:permission_handler/permission_handler.dart';
 import 'package:provider/provider.dart';
 
 class RegisterPage extends StatefulWidget {
@@ -124,6 +125,20 @@ class _RegisterPageState extends State<RegisterPage> {
                         password = value;
                       });
                     },
+                  ),
+                  SizedBox(height: 65.0.px,),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Radio<bool>(
+                        value: true,
+                        groupValue: true,
+                        onChanged: (value) {},
+                      ),
+                      Text('已阅读并同意', style: TextStyle(color: Color(0xffb2b2b2), fontSize: 40.0.px),),
+                      SizedBox(width: 14.0.px,),
+                      Text('微信软件许可及服务协议', style: TextStyle(color: Color(0xff576a94), fontSize: 40.0.px),),
+                    ],
                   ),
                   SizedBox(height: 20.0.px,),
                   Consumer<UserViewModel>(

@@ -39,7 +39,6 @@ class _CropImageState extends State<CropImage> {
           Positioned(
             bottom: 64.0.px,
             child: Container(
-              // width: double.infinity,
               width: MediaQuery.of(context).size.width,
               padding: EdgeInsets.symmetric(horizontal: 65.0.px),
               child: Row(
@@ -93,7 +92,7 @@ class _CropImageState extends State<CropImage> {
           print('裁剪不成功');
         });
       } else {
-        Navigator.pop<File>(context, originalFile);
+        print('权限被拒绝');
       }
     });
   }

@@ -13,7 +13,8 @@ class BuildTextField extends StatefulWidget {
   final Widget? child;
   final Widget? rightWidget;
 
-  const BuildTextField({Key? key, required this.label, required this.placeholder, this.validator, this.obscureText = false, this.keyboardType, this.onChanged, this.controller, this.child, this.rightWidget}) : super(key: key);
+  const
+  BuildTextField({Key? key, required this.label, required this.placeholder, this.validator, this.obscureText = false, this.keyboardType, this.onChanged, this.controller, this.child, this.rightWidget}) : super(key: key);
 
   @override
   _BuildTextFieldState createState() => _BuildTextFieldState();

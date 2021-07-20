@@ -1,22 +1,14 @@
 [
   {
-    "key": "defaylt",
+    "languageCode": "",
     "countryName": "跟随系统"
   },
   {
-    "key": "zh_cn",
+    "languageCode": "zh",
     "countryName": "简体中文"
   },
   {
-    "key": "zh_tw",
-    "countryName": "繁體中文（台湾）"
-  },
-  {
-    "key": "zh_hk",
-    "countryName": "繁體中文（台湾）"
-  },
-  {
-    "key": "en",
+    "languageCode": "en",
     "countryName": "English"
   }
 ]

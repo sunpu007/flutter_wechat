@@ -1,17 +1,17 @@
 class LanguageModel {
-  String? key;
+  String? languageCode;
   String? countryName;
 
-  LanguageModel({this.key, this.countryName});
+  LanguageModel({this.languageCode, this.countryName});
 
   LanguageModel.fromJson(Map<String, dynamic> json) {
-    key = json['key'];
+    languageCode = json['languageCode'];
     countryName = json['countryName'];
   }
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['key'] = this.key;
+    data['languageCode'] = this.languageCode;
     data['countryName'] = this.countryName;
     return data;
   }
