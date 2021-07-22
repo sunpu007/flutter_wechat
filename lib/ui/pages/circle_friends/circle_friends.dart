@@ -1,6 +1,6 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_wechat/core/extension/double_extension.dart';
+import 'package:flutter_wechat/ui/pages/circle_friends/components/item_context.dart';
 import 'package:flutter_wechat/ui/shared/app_theme.dart';
 
 class CircleFriends extends StatefulWidget {
@@ -74,15 +74,12 @@ class _CircleFriendsState extends State<CircleFriends> {
           clipBehavior: Clip.none,
           children: [
             Container(
+              color: Colors.white,
               child: ListView.builder(
-                itemCount: 30,
+                padding: EdgeInsets.only(top: 237.0.px),
+                itemCount: 1,
                 itemBuilder: (ctx, index) {
-                  return Container(
-                    alignment: Alignment.center,
-                    width: 100,
-                    height: 60,
-                    child: Text('111'),
-                  );
+                  return ItemContext();
                 },
               ),
             ),

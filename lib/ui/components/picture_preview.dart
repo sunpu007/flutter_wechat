@@ -2,16 +2,22 @@ import 'package:flutter/material.dart';
 
 class PicturePreviewComponent extends StatelessWidget {
   final String imagePath;
-  final Widget child;
+  final Widget? child;
 
-  const PicturePreviewComponent({Key? key, required this.imagePath, required this.child}) : super(key: key);
+  const PicturePreviewComponent({Key? key, required this.imagePath, this.child}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    Widget _child;
+    if (this.child == null) {
+      _child = Image.network(this.imagePath, fit: BoxFit.cover,);
+    } else {
+      _child = this.child!;
+    }
     return GestureDetector(
       child: Hero(
         tag: this.imagePath,
-        child: this.child,
+        child: _child,
       ),
       onTap: () {
         Navigator.of(context).push(PageRouteBuilder(
