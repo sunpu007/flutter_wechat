@@ -36,6 +36,7 @@ class PicturePreviewComponent extends StatelessWidget {
 class PicturePreviewPage extends StatelessWidget {
   final String imageURL;
 
+
   const PicturePreviewPage({Key? key, required this.imageURL}) : super(key: key);
 
   @override
