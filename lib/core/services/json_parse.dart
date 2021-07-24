@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'package:flutter/services.dart';
 import 'package:flutter_wechat/core/model/address_books_model.dart';
 import 'package:flutter_wechat/core/model/language_model.dart';
+import 'package:flutter_wechat/core/model/dynamic_model.dart';
 
 class JsonParse {
   static Future<List<AddressBooksModel>> getAddressBooksData() async {
@@ -28,5 +29,18 @@ class JsonParse {
     }
 
     return languages;
+  }
+
+  static Future<List<DynamicModel>> getDynamicData() async {
+    final jsonString = await rootBundle.loadString("assets/json/dynamic.json");
+
+    final result = json.decode(jsonString);
+
+    List<DynamicModel> dynamics = [];
+    for(var json in result) {
+      dynamics.add(DynamicModel.fromJson(json));
+    }
+
+    return dynamics;
   }
 }

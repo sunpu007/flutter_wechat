@@ -42,11 +42,11 @@ class PicturePreviewPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.black,
-      body: Center(
-        child: GestureDetector(
-          onTap: () {
-            Navigator.of(context).pop();
-          },
+      body: GestureDetector(
+        onTap: () {
+          Navigator.of(context).pop();
+        },
+        child: Center(
           child: Hero(
             tag: imageURL,
             child: Image.network(
@@ -54,8 +54,8 @@ class PicturePreviewPage extends StatelessWidget {
               width: double.infinity,
               fit: BoxFit.cover,
             ),
-          )
-        ),
+          ),
+        )
       ),
     );
   }

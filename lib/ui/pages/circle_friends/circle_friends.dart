@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_wechat/core/extension/double_extension.dart';
 import 'package:flutter_wechat/ui/pages/circle_friends/components/item_context.dart';
 import 'package:flutter_wechat/ui/shared/app_theme.dart';
+import 'package:flutter_wechat/core/services/json_parse.dart';
+import 'package:flutter_wechat/core/model/dynamic_model.dart';
 
 class CircleFriends extends StatefulWidget {
   static const String routerName = '/circleFriends';
@@ -16,6 +18,8 @@ class _CircleFriendsState extends State<CircleFriends> {
   late ScrollController _controller;
 
   String title = '';
+
+  List<DynamicModel> _dynamics = [];
 
   @override
   void initState() {
@@ -33,6 +37,12 @@ class _CircleFriendsState extends State<CircleFriends> {
           title = '';
         });
       }
+    });
+
+    JsonParse.getDynamicData().then((res) {
+      setState(() {
+        _dynamics = res;
+      });
     });
   }
 
@@ -77,9 +87,11 @@ class _CircleFriendsState extends State<CircleFriends> {
               color: Colors.white,
               child: ListView.builder(
                 padding: EdgeInsets.only(top: 237.0.px),
-                itemCount: 1,
+                itemCount: _dynamics.length,
                 itemBuilder: (ctx, index) {
-                  return ItemContext();
+                  return ItemContext(
+                    dynamic: _dynamics[index],
+                  );
                 },
               ),
             ),
