@@ -4,6 +4,7 @@ import 'package:flutter_wechat/core/extension/double_extension.dart';
 import 'package:flutter_wechat/core/model/dynamic_model.dart';
 import 'package:flutter_wechat/core/utils/utils.dart';
 import 'package:flutter_wechat/ui/components/picture_preview.dart';
+import 'package:flutter_wechat/ui/pages/user_info/user_info.dart';
 
 class ItemContext extends StatelessWidget {
   final DynamicModel dynamic;
@@ -29,14 +30,19 @@ class ItemContext extends StatelessWidget {
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          ClipRRect(
-            child: Image.network(
-              dynamic.userInfo!.avatarUrl,
-              width: 108.0.px,
-              height: 108.0.px,
-              fit: BoxFit.cover,
+          GestureDetector(
+            child: ClipRRect(
+              child: Image.network(
+                dynamic.userInfo!.avatarUrl,
+                width: 108.0.px,
+                height: 108.0.px,
+                fit: BoxFit.cover,
+              ),
+              borderRadius: BorderRadius.circular(10.0.px)
             ),
-            borderRadius: BorderRadius.circular(10.0.px)
+            onTap: () {
+              Navigator.of(context).pushNamed(UserInfoPage.routerName, arguments: dynamic.userInfo);
+            },
           ),
           SizedBox(width: 26.0.px,),
           Expanded(
