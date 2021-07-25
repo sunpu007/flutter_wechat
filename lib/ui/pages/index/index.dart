@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_wechat/core/extension/double_extension.dart';
 import 'package:flutter_wechat/core/viewmodel/user_view_model.dart';
 import 'package:flutter_wechat/generated/l10n.dart';
@@ -29,6 +30,8 @@ class _IndexPageState extends State<IndexPage> {
   @override
   void initState() {
     super.initState();
+    SystemUiOverlayStyle systemUiOverlayStyle = SystemUiOverlayStyle.light;
+    SystemChrome.setSystemUIOverlayStyle(systemUiOverlayStyle);
   }
 
   @override

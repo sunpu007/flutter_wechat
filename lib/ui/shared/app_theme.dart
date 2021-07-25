@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_wechat/core/extension/double_extension.dart';
 import 'package:flutter_wechat/core/extension/double_extension.dart';
 
@@ -27,6 +28,10 @@ class AppTheme {
       iconTheme: IconThemeData(
         color: Colors.black,
         size: 44.0.px
+      ),
+      systemOverlayStyle: SystemUiOverlayStyle(
+        statusBarColor: Colors.transparent,
+        statusBarIconBrightness: Brightness.dark,
       )
     ),
     bottomNavigationBarTheme: BottomNavigationBarThemeData(

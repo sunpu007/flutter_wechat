@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_wechat/core/extension/double_extension.dart';
 import 'package:flutter_wechat/ui/pages/circle_friends/components/item_context.dart';
 import 'package:flutter_wechat/ui/shared/app_theme.dart';
@@ -106,6 +107,7 @@ class _CircleFriendsState extends State<CircleFriends> {
                 onPressed: () {},
               ),
             ],
+            systemOverlayStyle: title == '' ? SystemUiOverlayStyle.light : SystemUiOverlayStyle.dark,
           ),
         ),
       ),
