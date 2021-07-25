@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_wechat/core/extension/double_extension.dart';
 import 'package:flutter_wechat/core/model/dynamic_model.dart';
+import 'package:flutter_wechat/core/utils/utils.dart';
 import 'package:flutter_wechat/ui/components/picture_preview.dart';
 
 class ItemContext extends StatelessWidget {
@@ -66,7 +67,8 @@ class ItemContext extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
-                      dynamic.timestamp!.toString(),
+                      // dynamic.timestamp!.toString(),
+                      timeFilter(dynamic.timestamp!),
                       style: TextStyle(
                         fontSize: 30.0.px,
                         color: Color(0xff7f7f7f),
