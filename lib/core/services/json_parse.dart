@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'package:flutter/services.dart';
 import 'package:flutter_wechat/core/model/address_books_model.dart';
+import 'package:flutter_wechat/core/model/emoji_model.dart';
 import 'package:flutter_wechat/core/model/language_model.dart';
 import 'package:flutter_wechat/core/model/dynamic_model.dart';
 
@@ -42,5 +43,18 @@ class JsonParse {
     }
 
     return dynamics;
+  }
+
+  static Future<List<EmojiModel>> getEmojiData() async {
+    final jsonString = await rootBundle.loadString("assets/json/emoji_data.json");
+
+    final result = json.decode(jsonString);
+
+    List<EmojiModel> emojis = [];
+    for(var json in result) {
+      emojis.add(EmojiModel.fromJson(json));
+    }
+
+    return emojis;
   }
 }

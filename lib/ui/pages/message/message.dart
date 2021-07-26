@@ -36,7 +36,7 @@ class _MessagePageState extends State<MessagePage> {
       body: ListView.builder(
         itemCount: messages.length,
         itemBuilder: (BuildContext context, int index) {
-          return UserListItem(key: Key(messages[index].senderId.toString()), messageModel: messages[index],);
+          return UserListItem(key: ValueKey(messages[index].senderId.toString()), messageModel: messages[index],);
         },
       ),
     );

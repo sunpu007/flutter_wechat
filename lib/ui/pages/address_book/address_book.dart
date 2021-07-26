@@ -80,7 +80,7 @@ class _AddressBookState extends State<AddressBook> {
             right: 23.0.px,
             child: Column(
               children: [
-                ..._letters.map((e) => Text(e, style: TextStyle(fontSize: 34.0.px, height: 1.2),),),
+                ..._letters.map((e) => Text(e, key: ValueKey(e), style: TextStyle(fontSize: 34.0.px, height: 1.2),),),
               ],
             ),
           )
@@ -96,6 +96,7 @@ class _AddressBookState extends State<AddressBook> {
       widgetList.add(Classification(title: item.letter),);
       for (int i = 0; i < item.children.length; i++) {
         widgetList.add(ContactPerson(
+          key: ValueKey(item.children[i].userId),
           title: item.children[i].name,
           icon: Image.network(
             item.children[i].avatarUrl,
