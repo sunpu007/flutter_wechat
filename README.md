@@ -44,7 +44,7 @@ flutter run
 ```
 ## 部分界面截图
 
-![demo](https://user-images.githubusercontent.com/20461171/125292050-a3374b00-e354-11eb-998d-fdba46568741.png)
+![demo](https://user-images.githubusercontent.com/20461171/127133672-211d77be-8ee6-4972-a5fb-6f4ec690444c.png)
 
 ## License
 
