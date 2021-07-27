@@ -31,7 +31,10 @@ class MyApp extends StatelessWidget {
           title: 'Flutter微信',
           // 取消debug图标
           debugShowCheckedModeBanner: false,
-          theme: AppTheme.norTheme,
+          // theme: AppTheme.norTheme,
+          // darkTheme: AppTheme.darkTheme,
+          theme: ThemeData.light(),
+          darkTheme: ThemeData.dark(),
           routes: AppRouter.routers,
           initialRoute: AppRouter.initialRoute,
           supportedLocales: S.delegate.supportedLocales,

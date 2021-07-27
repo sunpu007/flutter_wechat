@@ -65,7 +65,7 @@ class _CircleFriendsState extends State<CircleFriends> {
             color: Colors.white,
             child: ListView(
               controller: _controller,
-              padding: EdgeInsets.only(top: 0, bottom: 200.0.px),
+              padding: EdgeInsets.only(top: 0),
               children: [
                 Image.network(
                   'https://oss-blog.myjerry.cn/avatar/blog-avatar.jpg',

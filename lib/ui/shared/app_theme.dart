@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_wechat/core/extension/double_extension.dart';
-import 'package:flutter_wechat/core/extension/double_extension.dart';
 
 class AppTheme {
 
@@ -47,7 +46,39 @@ class AppTheme {
 
   // 2.暗黑模式
   static final ThemeData darkTheme = ThemeData(
-    primarySwatch: Colors.grey,
+    splashColor: Colors.transparent,
+    highlightColor: Colors.transparent,
+    primarySwatch: createMaterialColor(Color(0xff07c160)),
+    canvasColor: Color(0xff111111),
+    dividerColor: Color(0xff252525),
+    appBarTheme: AppBarTheme(
+        backgroundColor: Color(0xff111111),
+        elevation: 0.0,
+        centerTitle: true,
+        backwardsCompatibility: false,
+        titleTextStyle: TextStyle(
+          color: Colors.white,
+          fontSize: 44.0.px,
+          fontWeight: FontWeight.w500,
+        ),
+        iconTheme: IconThemeData(
+            color: Colors.white,
+            size: 44.0.px
+        ),
+        systemOverlayStyle: SystemUiOverlayStyle(
+          statusBarColor: Colors.transparent,
+          statusBarIconBrightness: Brightness.light,
+        )
+    ),
+    bottomNavigationBarTheme: BottomNavigationBarThemeData(
+      backgroundColor: Color(0xff1e1e1e),
+      unselectedItemColor: Color(0xffcccccc),
+    ),
+    popupMenuTheme: PopupMenuThemeData(
+        textStyle: TextStyle(
+            fontSize: 42.0.px
+        )
+    ),
   );
 }
 
