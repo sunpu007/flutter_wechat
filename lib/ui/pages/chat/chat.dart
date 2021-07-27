@@ -21,6 +21,7 @@ class _ChatPageState extends State<ChatPage> with WidgetsBindingObserver {
 
   String _value = '';
   TextEditingController _textEditingController = TextEditingController();
+  FocusNode _commentFocus = FocusNode();
 
   bool _isShowEmoji = false;
 
@@ -208,6 +209,11 @@ class _ChatPageState extends State<ChatPage> with WidgetsBindingObserver {
                     setState(() {
                       _isShowEmoji = !_isShowEmoji;
                     });
+                    if (!_isShowEmoji) {
+                      FocusScope.of(context).requestFocus(_commentFocus);
+                    } else {
+                      _commentFocus.unfocus();
+                    }
                     Timer(Duration(milliseconds: 100), () => _listViewController.jumpTo(_listViewController.position.maxScrollExtent));
                   },
                 ),
@@ -264,6 +270,7 @@ class _ChatPageState extends State<ChatPage> with WidgetsBindingObserver {
         ),
         child: TextField(
           controller: _textEditingController,
+          focusNode: _commentFocus,
           maxLines: null,
           keyboardType: TextInputType.multiline,
           style: TextStyle(
