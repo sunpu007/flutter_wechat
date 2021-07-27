@@ -18,7 +18,7 @@ class UserInfoPage extends StatelessWidget {
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(AppTheme.appBarHeight),
         child: AppBar(
-          backgroundColor: Colors.white,
+          backgroundColor: Theme.of(context).cardColor,
           actions: [
             IconButton(
               icon: Icon(Icons.more_horiz),
@@ -32,7 +32,7 @@ class UserInfoPage extends StatelessWidget {
           Container(
             padding: EdgeInsets.fromLTRB(43.0.px, 43.0.px, 43.0.px, 60.0.px),
             decoration: BoxDecoration(
-              color: Colors.white,
+              color: Theme.of(context).cardColor,
               border: Border(
                 bottom: BorderSide(
                   color: Theme.of(context).dividerColor,
@@ -75,7 +75,7 @@ class UserInfoPage extends StatelessWidget {
               ],
             ),
           ),
-          _buildItemContainer([
+          _buildItemContainer(context, [
             ListNavItem(
               title: '设置备注和标签',
             ),
@@ -84,7 +84,7 @@ class UserInfoPage extends StatelessWidget {
               isShowBottomBorder: false,
             ),
           ]),
-          _buildItemContainer([
+          _buildItemContainer(context, [
             ListNavItem(
               title: '朋友圈',
               height: 216.0.px,
@@ -99,7 +99,7 @@ class UserInfoPage extends StatelessWidget {
               isShowBottomBorder: false,
             ),
           ]),
-          _buildItemContainer([
+          _buildItemContainer(context, [
             _buildButton(context, Icons.messenger, '发消息'),
             _buildButton(context, Icons.videocam_outlined, '音视频通话', isShowBorder: false),
           ]),
@@ -108,9 +108,9 @@ class UserInfoPage extends StatelessWidget {
     );
   }
 
-  Widget _buildItemContainer(List<Widget> child) {
+  Widget _buildItemContainer(BuildContext context, List<Widget> child) {
     return Container(
-      color: Colors.white,
+      color: Theme.of(context).cardColor,
       margin: EdgeInsets.only(
         bottom: 22.0.px,
       ),

@@ -79,6 +79,7 @@ class _LoginPageState extends State<LoginPage> {
                     },
                     onChanged: (value) {
                       setState(() {
+
                         password = value;
                       });
                     },

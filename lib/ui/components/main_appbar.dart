@@ -25,8 +25,6 @@ class MainAppBarComponent extends StatelessWidget {
         PopupMenuButton<String>(
           icon: Icon(Icons.add_circle_outline),
           offset: Offset(0, AppTheme.appBarHeight),
-          elevation: 0.0,
-          color: Color(0xff4c4c4c),
           shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(20.0.px)
           ),
@@ -38,8 +36,8 @@ class MainAppBarComponent extends StatelessWidget {
                   spacing: 10,
                   crossAxisAlignment: WrapCrossAlignment.center,
                   children: [
-                    Icon(Icons.messenger, color: Colors.white,),
-                    Text('发起群聊', style: TextStyle(color: Colors.white),),
+                    Icon(Icons.messenger),
+                    Text('发起群聊'),
                   ],
                 )
             ),
@@ -51,8 +49,8 @@ class MainAppBarComponent extends StatelessWidget {
                   spacing: 10,
                   crossAxisAlignment: WrapCrossAlignment.center,
                   children: [
-                    Icon(Icons.person_add_alt_1, color: Colors.white,),
-                    Text('添加朋友', style: TextStyle(color: Colors.white),),
+                    Icon(Icons.person_add_alt_1),
+                    Text('添加朋友'),
                   ],
                 )
             ),
@@ -64,8 +62,8 @@ class MainAppBarComponent extends StatelessWidget {
                   spacing: 10,
                   crossAxisAlignment: WrapCrossAlignment.center,
                   children: [
-                    Icon(Icons.qr_code_scanner, color: Colors.white,),
-                    Text('扫一扫', style: TextStyle(color: Colors.white),),
+                    Icon(Icons.qr_code_scanner),
+                    Text('扫一扫'),
                   ],
                 )
             ),
@@ -77,8 +75,8 @@ class MainAppBarComponent extends StatelessWidget {
                   spacing: 10,
                   crossAxisAlignment: WrapCrossAlignment.center,
                   children: [
-                    Icon(Icons.paid, color: Colors.white,),
-                    Text('收付款', style: TextStyle(color: Colors.white),),
+                    Icon(Icons.paid),
+                    Text('收付款'),
                   ],
                 )
             ),
@@ -90,8 +88,8 @@ class MainAppBarComponent extends StatelessWidget {
                   spacing: 10,
                   crossAxisAlignment: WrapCrossAlignment.center,
                   children: [
-                    Icon(Icons.email, color: Colors.white,),
-                    Text('帮助与反馈', style: TextStyle(color: Colors.white),),
+                    Icon(Icons.email),
+                    Text('帮助与反馈'),
                   ],
                 )
             ),

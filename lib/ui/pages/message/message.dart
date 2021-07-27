@@ -32,7 +32,7 @@ class _MessagePageState extends State<MessagePage> {
         preferredSize: Size.fromHeight(AppTheme.appBarHeight),
         child: MainAppBarComponent('微信'),
       ),
-      backgroundColor: Colors.white,
+      backgroundColor: Theme.of(context).cardColor,
       body: ListView.builder(
         itemCount: messages.length,
         itemBuilder: (BuildContext context, int index) {

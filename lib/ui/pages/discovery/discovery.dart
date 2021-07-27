@@ -15,7 +15,7 @@ class DiscoveryPage extends StatelessWidget {
       ),
       body: ListView(
         children: [
-          _buildItemContainer([
+          _buildItemContainer(context, [
               ListNavItem(
                 title: '朋友圈',
                 imagePath: 'assets/images/circle_of_friends.png',
@@ -49,14 +49,14 @@ class DiscoveryPage extends StatelessWidget {
                 ),
               ),
           ]),
-          _buildItemContainer([
+          _buildItemContainer(context, [
             ListNavItem(
               title: '视频号',
               imagePath: 'assets/images/video_icon.png',
               isShowBottomBorder: false,
             ),
           ]),
-          _buildItemContainer([
+          _buildItemContainer(context, [
             ListNavItem(
               title: '扫一扫',
               imagePath: 'assets/images/scan_it_icon.png',
@@ -67,7 +67,7 @@ class DiscoveryPage extends StatelessWidget {
               isShowBottomBorder: false,
             ),
           ]),
-          _buildItemContainer([
+          _buildItemContainer(context, [
             ListNavItem(
               title: '看一看',
               imagePath: 'assets/images/take_a_look_icon.png',
@@ -78,14 +78,14 @@ class DiscoveryPage extends StatelessWidget {
               isShowBottomBorder: false,
             ),
           ]),
-          _buildItemContainer([
+          _buildItemContainer(context, [
             ListNavItem(
               title: '直播与附近',
               imagePath: 'assets/images/live_and_nearby.png',
               isShowBottomBorder: false,
             ),
           ]),
-          _buildItemContainer([
+          _buildItemContainer(context, [
             ListNavItem(
               title: '购物',
               imagePath: 'assets/images/shopping_icon.png',
@@ -96,7 +96,7 @@ class DiscoveryPage extends StatelessWidget {
               isShowBottomBorder: false,
             ),
           ]),
-          _buildItemContainer([
+          _buildItemContainer(context, [
             ListNavItem(
               title: '小程序',
               imagePath: 'assets/images/applets_icon.png',
@@ -108,9 +108,9 @@ class DiscoveryPage extends StatelessWidget {
     );
   }
 
-  Widget _buildItemContainer(List<Widget> child) {
+  Widget _buildItemContainer(BuildContext context, List<Widget> child) {
     return Container(
-      color: Colors.white,
+      color: Theme.of(context).cardColor,
       margin: EdgeInsets.only(
         bottom: 22.0.px,
       ),

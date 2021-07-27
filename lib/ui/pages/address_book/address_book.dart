@@ -46,7 +46,7 @@ class _AddressBookState extends State<AddressBook> {
         preferredSize: Size.fromHeight(AppTheme.appBarHeight),
         child: MainAppBarComponent('通讯录'),
       ),
-      backgroundColor: Colors.white,
+      backgroundColor: Theme.of(context).cardColor,
       body: Stack(
         alignment: Alignment.center,
         children: [

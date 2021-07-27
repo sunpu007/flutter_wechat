@@ -170,7 +170,7 @@ class _BottomContextState extends State<BottomContext> {
   Widget _buildEmojiWidget() {
     return Container(
       height: 760.0.px,
-      color: Color(0xffededed),
+      color: Theme.of(context).canvasColor,
       child: GridView(
         padding: EdgeInsets.all(44.0.px),
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(

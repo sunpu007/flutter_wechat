@@ -18,7 +18,7 @@ class MinePage extends StatelessWidget {
           children: [
             Container(
               padding: EdgeInsets.fromLTRB(65.0.px, 130.0.px, 45.0.px, 65.0.px),
-              color: Colors.white,
+              color: Theme.of(context).cardColor,
               margin: EdgeInsets.only(
                 bottom: 22.0.px,
               ),
@@ -74,14 +74,14 @@ class MinePage extends StatelessWidget {
                 ],
               ),
             ),
-            _buildItemContainer([
+            _buildItemContainer(context, [
               ListNavItem(
                 title: '支付',
                 imagePath: 'assets/images/wechat_pay.png',
                 isShowBottomBorder: false,
               ),
             ]),
-            _buildItemContainer([
+            _buildItemContainer(context, [
               ListNavItem(
                 title: '收藏',
                 imagePath: 'assets/images/favorites_icon.png',
@@ -100,14 +100,14 @@ class MinePage extends StatelessWidget {
                 isShowBottomBorder: false,
               ),
             ]),
-            _buildItemContainer([
+            _buildItemContainer(context, [
               ListNavItem(
                 title: '设置',
                 leading: Icon(Icons.settings_outlined, color: Color(0xff2781d7), size: 60.0.px,),
                 isShowBottomBorder: false,
               ),
             ]),
-            _buildItemContainer([
+            _buildItemContainer(context, [
               ListNavItem(
                 title: '测试websocket',
                 leading: Icon(Icons.connect_without_contact_outlined, color: Color(0xff2781d7), size: 60.0.px,),
@@ -115,7 +115,7 @@ class MinePage extends StatelessWidget {
                 jumpPath: WebSocketPage.routerName,
               ),
             ]),
-            _buildItemContainer([
+            _buildItemContainer(context, [
               Consumer<UserViewModel>(
                 builder: (context, userVM, child) {
                   return ListNavItem(
@@ -136,9 +136,9 @@ class MinePage extends StatelessWidget {
     );
   }
 
-  Widget _buildItemContainer(List<Widget> child) {
+  Widget _buildItemContainer(BuildContext context, List<Widget> child) {
     return Container(
-      color: Colors.white,
+      color: Theme.of(context).cardColor,
       margin: EdgeInsets.only(
         bottom: 22.0.px,
       ),
