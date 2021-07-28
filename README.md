@@ -48,7 +48,7 @@ flutter run
 
 ## 联系我
 
-<img src="https://user-images.githubusercontent.com/20461171/127292875-69a03211-59c3-4df4-adde-0b1fbaae44cc.jpg" width="200px" alt="wxid_mwukw2ulwej422" />
+<img src="https://user-images.githubusercontent.com/20461171/127292875-69a03211-59c3-4df4-adde-0b1fbaae44cc.jpg" width="300px" alt="wxid_mwukw2ulwej422" />
 
 ## License
 
