@@ -32,7 +32,7 @@ class _BuildTextFieldState extends State<BuildTextField> {
             decoration: BoxDecoration(
               border: Border(
                 bottom: BorderSide(
-                  color: Color(0xffd8d8d8),
+                  color: Theme.of(context).dividerColor,
                   width: 2.0.px
                 )
               ),
