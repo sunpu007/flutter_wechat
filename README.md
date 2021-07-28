@@ -46,6 +46,10 @@ flutter run
 
 ![demo](https://user-images.githubusercontent.com/20461171/127133672-211d77be-8ee6-4972-a5fb-6f4ec690444c.png)
 
+## 联系我
+
+![wxid_mwukw2ulwej422](https://user-images.githubusercontent.com/20461171/127292274-8279ed18-3b5c-452d-a667-254bb3fd4781.jpg)
+
 ## License
 
 [MIT](https://github.com/sunpu007/flutter_wechat/blob/main/LICENSE)
