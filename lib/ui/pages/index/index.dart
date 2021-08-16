@@ -1,14 +1,11 @@
-import 'dart:async';
-
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_wechat/core/extension/double_extension.dart';
-import 'package:flutter_wechat/core/viewmodel/user_view_model.dart';
 import 'package:flutter_wechat/generated/l10n.dart';
 import 'package:flutter_wechat/ui/pages/index/register/register.dart';
 import 'package:flutter_wechat/ui/pages/language/Language.dart';
 import 'package:flutter_wechat/ui/pages/main/main.dart';
-import 'package:provider/provider.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import 'login/login.dart';
 
@@ -24,27 +21,23 @@ class IndexPage extends StatefulWidget {
 class _IndexPageState extends State<IndexPage> {
   bool showLoginBtn = false;
 
-  Timer? mainTimer;
-  Timer? navTimer;
-
   @override
   void initState() {
     super.initState();
     SystemUiOverlayStyle systemUiOverlayStyle = SystemUiOverlayStyle.light;
     SystemChrome.setSystemUIOverlayStyle(systemUiOverlayStyle);
-  }
 
-  @override
-  void dispose() {
-    mainTimer!.cancel();
-    navTimer!.cancel();
-    super.dispose();
-  }
-
-  @override
-  void didChangeDependencies() {
-    this.context.dependOnInheritedWidgetOfExactType();
-    super.didChangeDependencies();
+    SharedPreferences.getInstance().then((prefs) {
+      String token = (prefs.getString('token') != null ? prefs.getString('token') : '')!;
+      // 判断用户是否登录
+      if (token!.isEmpty) {
+        setState(() {
+          showLoginBtn = true;
+          });
+      } else {
+        Navigator.pushNamedAndRemoveUntil(context, MainPage.routerName, (route) => false);
+      }
+    });
   }
 
   @override
@@ -63,26 +56,6 @@ class _IndexPageState extends State<IndexPage> {
             ),
           ),
           ..._buildBtnWidget(),
-          Consumer<UserViewModel>(
-            builder: (ctx, userVM, child) {
-              mainTimer = Timer(Duration(seconds: 1), () {
-                if (userVM.token.isNotEmpty) {
-                  navTimer = Timer(Duration(seconds: 1), () {
-                    navTimer!.cancel();
-                    Navigator.pushNamedAndRemoveUntil(context, MainPage.routerName, (route) => false);
-                  });
-                } else {
-                  if (mounted) {
-                    setState(() {
-                      showLoginBtn = true;
-                    });
-                  }
-                }
-                mainTimer!.cancel();
-              });
-              return Container();
-            }
-          ),
         ],
       ),
     );

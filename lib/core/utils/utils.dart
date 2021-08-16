@@ -30,3 +30,12 @@ String timeFilter(int time) {
   if (diff < 86400) return (diff ~/ 3600).toString() + '小时前';
   return (diff ~/ 86400).toString() + '天前';
 }
+
+/// 模版字符串替换
+String formatStr(String str, List<dynamic> args) {
+  if (str == '') return '';
+  for (int i = 0; i < args.length; i++) {
+    str = str.replaceAll(RegExp(r'\{' + i.toString() + '\}'), args[i].toString());
+  }
+  return str;
+}
