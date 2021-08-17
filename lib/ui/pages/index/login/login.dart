@@ -29,30 +29,52 @@ class _LoginPageState extends State<LoginPage> {
         key: _formKey,
         child: ListView(
           children: [
-            Container(
+            Padding(
               padding: EdgeInsets.fromLTRB(44.0.px, 44.0.px, 44.0.px, 0),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   GestureDetector(
-                    child: Icon(Icons.close, size: 88.0.px,),
+                    child: Icon(
+                      Icons.close,
+                      size: 88.0.px,
+                    ),
                     onTap: () {
                       Navigator.of(context).pop();
                     },
                   ),
                   SizedBox(height: 148.0.px,),
-                  Text(S.of(context).phoneLogin, style: TextStyle(fontSize: 70.0.px,),),
+                  Text(
+                    S.of(context).phoneLogin,
+                    style: TextStyle(
+                      fontSize: 70.0.px,
+                    ),
+                  ),
                   SizedBox(height: 100.0.px,),
-                  Container(
-                    padding: EdgeInsets.symmetric(horizontal: 24.0.px, vertical: 52.0.px),
+                  Padding(
+                    padding: EdgeInsets.symmetric(
+                      horizontal: 24.0.px,
+                      vertical: 52.0.px
+                    ),
                     child: Row(
                       children: [
                         Container(
                           width: 275.0.px,
-                          child: Text(S.of(context).region, style: TextStyle(fontSize: 50.0.px),),
+                          child: Text(
+                            S.of(context).region,
+                            style: TextStyle(
+                              fontSize: 50.0.px
+                            ),
+                          ),
                         ),
                         Expanded(
-                          child: Text('中国大陆 （+86）', style: TextStyle(fontSize: 50.0.px, color: Color(0xff07c160)),),
+                          child: Text(
+                            '中国大陆 （+86）',
+                            style: TextStyle(
+                              fontSize: 50.0.px,
+                              color: Color(0xff07c160),
+                            ),
+                          ),
                         ),
                       ],
                     ),
@@ -79,7 +101,6 @@ class _LoginPageState extends State<LoginPage> {
                     },
                     onChanged: (value) {
                       setState(() {
-
                         password = value;
                       });
                     },
@@ -87,25 +108,30 @@ class _LoginPageState extends State<LoginPage> {
                   Container(
                     margin: EdgeInsets.only(top: 76.0.px),
                     padding: EdgeInsets.symmetric(horizontal: 24.0.px,),
-                    child: Text(S.of(context).otherLogin, style: TextStyle(color: Color(0xff586b95), fontSize: 44.0.px),),
+                    child: Text(
+                      S.of(context).otherLogin,
+                      style: TextStyle(
+                        color: Color(0xff586b95),
+                        fontSize: 44.0.px
+                      ),
+                    ),
                   ),
                   SizedBox(height: 117.0.px,),
-                  Consumer<UserViewModel>(
-                    builder: (ctx, userVM, child) {
-                      return  MaterialButton(
-                        minWidth: double.infinity,
-                        height: 130.0.px,
-                        color: (mobile.length > 0 && password.length > 0) ? Color(0xff07c160) : Color(0xffe1e1e1),
-                        textColor: (mobile.length > 0 && password.length > 0) ? Colors.white : Color(0xffb4b4b4),
-                        elevation: 0,
-                        highlightElevation: 0,
-                        child: Text(S.of(context).loginBtn, style: TextStyle(fontSize: 44.0.px),),
-                        onPressed: () {
-                          if ((mobile.length <= 0 && password.length <= 0) || !_formKey.currentState!.validate()) return;
-                          userVM.token = '123456';
-                          Navigator.pushNamedAndRemoveUntil(context, MainPage.routerName, (route) => false);
-                        },
-                      );
+                  MaterialButton(
+                    minWidth: double.infinity,
+                    height: 130.0.px,
+                    color: (mobile.length > 0 && password.length > 0) ? Color(0xff07c160) : Color(0xffe1e1e1),
+                    textColor: (mobile.length > 0 && password.length > 0) ? Colors.white : Color(0xffb4b4b4),
+                    elevation: 0,
+                    highlightElevation: 0,
+                    child: Text(
+                      S.of(context).loginBtn,
+                      style: TextStyle(fontSize: 44.0.px),
+                    ),
+                    onPressed: () {
+                      if ((mobile.length <= 0 && password.length <= 0) || !_formKey.currentState!.validate()) return;
+                      Provider.of<UserViewModel>(context).token = mobile;
+                      Navigator.pushNamedAndRemoveUntil(context, MainPage.routerName, (route) => false);
                     },
                   ),
                 ],
