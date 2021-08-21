@@ -8,5 +8,6 @@
   "phone": "Phone",
   "password": "Password",
   "name": "Name",
-  "otherLogin": "Log in via WeChat ID/Email/QQ ID"
+  "otherLogin": "Log in via WeChat ID/Email/QQ ID",
+  "loginTip": "Any mobile phone number plus a 6-digit password can log in"
 }
