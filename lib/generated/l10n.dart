@@ -149,6 +149,16 @@ class S {
       args: [],
     );
   }
+
+  /// `Any mobile phone number plus a 6-digit password can log in`
+  String get loginTip {
+    return Intl.message(
+      'Any mobile phone number plus a 6-digit password can log in',
+      name: 'loginTip',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

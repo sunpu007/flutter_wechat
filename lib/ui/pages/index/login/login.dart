@@ -106,6 +106,16 @@ class _LoginPageState extends State<LoginPage> {
                     },
                   ),
                   Container(
+                    margin: EdgeInsets.only(top: 20.0.px),
+                    child: Text(
+                      S.of(context).loginTip,
+                      style: TextStyle(
+                        fontSize: 36.0.px,
+                        color: Colors.grey,
+                      ),
+                    ),
+                  ),
+                  Container(
                     margin: EdgeInsets.only(top: 76.0.px),
                     padding: EdgeInsets.symmetric(horizontal: 24.0.px,),
                     child: Text(

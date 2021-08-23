@@ -23,6 +23,7 @@ class MessageLookup extends MessageLookupByLibrary {
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "language": MessageLookupByLibrary.simpleMessage("语言"),
         "loginBtn": MessageLookupByLibrary.simpleMessage("登录"),
+        "loginTip": MessageLookupByLibrary.simpleMessage("任意手机号加6位数字的密码即可登录"),
         "name": MessageLookupByLibrary.simpleMessage("昵称"),
         "otherLogin": MessageLookupByLibrary.simpleMessage("用微信号/QQ号/邮箱登录"),
         "password": MessageLookupByLibrary.simpleMessage("密码"),

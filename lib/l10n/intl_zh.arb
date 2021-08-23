@@ -8,5 +8,6 @@
   "phone": "手机号",
   "password": "密码",
   "name": "昵称",
-  "otherLogin": "用微信号/QQ号/邮箱登录"
+  "otherLogin": "用微信号/QQ号/邮箱登录",
+  "loginTip": "任意手机号加6位数字的密码即可登录"
 }

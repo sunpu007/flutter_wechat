@@ -42,6 +42,11 @@ flutter pub get
 # 启动服务
 flutter run
 ```
+
+## 预览提示
+
+任意手机号与6位的密码即可登录
+
 ## 部分界面截图
 
 ![demo](https://user-images.githubusercontent.com/20461171/127133672-211d77be-8ee6-4972-a5fb-6f4ec690444c.png)
