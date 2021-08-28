@@ -127,21 +127,26 @@ class _LoginPageState extends State<LoginPage> {
                     ),
                   ),
                   SizedBox(height: 117.0.px,),
-                  MaterialButton(
-                    minWidth: double.infinity,
-                    height: 130.0.px,
-                    color: (mobile.length > 0 && password.length > 0) ? Color(0xff07c160) : Color(0xffe1e1e1),
-                    textColor: (mobile.length > 0 && password.length > 0) ? Colors.white : Color(0xffb4b4b4),
-                    elevation: 0,
-                    highlightElevation: 0,
-                    child: Text(
-                      S.of(context).loginBtn,
-                      style: TextStyle(fontSize: 44.0.px),
-                    ),
-                    onPressed: () {
-                      if ((mobile.length <= 0 && password.length <= 0) || !_formKey.currentState!.validate()) return;
-                      Provider.of<UserViewModel>(context).token = mobile;
-                      Navigator.pushNamedAndRemoveUntil(context, MainPage.routerName, (route) => false);
+                  Consumer<UserViewModel>(
+                    builder: (BuildContext context, UserViewModel userVM, Widget? child) {
+                      return MaterialButton(
+                        minWidth: double.infinity,
+                        height: 130.0.px,
+                        color: (mobile.length > 0 && password.length > 0) ? Color(0xff07c160) : Color(0xffe1e1e1),
+                        textColor: (mobile.length > 0 && password.length > 0) ? Colors.white : Color(0xffb4b4b4),
+                        elevation: 0,
+                        highlightElevation: 0,
+                        child: Text(
+                          S.of(context).loginBtn,
+                          style: TextStyle(fontSize: 44.0.px),
+                        ),
+                        onPressed: () {
+                          if ((mobile.length <= 0 && password.length <= 0) || !_formKey.currentState!.validate()) return;
+                          // Provider.of<UserViewModel>(context).token = mobile;
+                          userVM.token = mobile;
+                          Navigator.pushNamedAndRemoveUntil(context, MainPage.routerName, (route) => false);
+                        },
+                      );
                     },
                   ),
                 ],
