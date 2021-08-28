@@ -30,7 +30,7 @@ class _IndexPageState extends State<IndexPage> {
     SharedPreferences.getInstance().then((prefs) {
       String token = (prefs.getString('token') != null ? prefs.getString('token') : '')!;
       // 判断用户是否登录
-      if (token!.isEmpty) {
+      if (token.isEmpty) {
         setState(() {
           showLoginBtn = true;
           });
