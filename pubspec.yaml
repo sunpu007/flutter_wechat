@@ -39,6 +39,7 @@ dependencies:
   permission_handler: ^8.1.2
   image_picker: ^0.8.2
   image_crop: ^0.4.0
+  jpush_flutter: ^2.1.5
 
 dev_dependencies:
   flutter_test:
